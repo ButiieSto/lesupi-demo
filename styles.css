@@ -37,37 +37,33 @@ p {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* === NAVBAR (STICKY) === */
+/* === NAVBAR (SIDE BY SIDE) === */
 .navbar {
   background-color: #d4af37; /* gold tone */
   padding: 0.8em 0;
-  text-align: center;
-  position: sticky;  /* Stays visible when scrolling */
+  position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-.navbar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em; /* Space between items */
 }
 
-.navbar li {
-  display: inline-block;
-  margin: 0 15px;
-}
-
-.navbar a {
+.nav-link {
   color: #111;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.05em;
+  transition: color 0.3s ease;
 }
 
-.navbar a:hover,
-.navbar a.active {
+.nav-link:hover,
+.nav-link.active {
   color: #004aad;
 }
 
@@ -139,9 +135,9 @@ footer {
 
 /* === RESPONSIVE === */
 @media (max-width: 600px) {
-  .navbar li {
-    display: block;
-    margin: 0.6em 0;
+  .nav-container {
+    flex-direction: column;
+    gap: 1em;
   }
 
   .buttons button {
