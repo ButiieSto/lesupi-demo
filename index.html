@@ -1,59 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lithako Edu & Sports – Empowering Our Young Minds</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+/* NAVBAR HORIZONTAL STYLE */
+.navbar {
+  background: var(--dark-blue);
+  padding: 0.5rem 0;
+}
 
-  <!-- HEADER -->
-  <header>
-    <img src="Lithako-logo.png" alt="Lithako Edu & Sports Logo">
-    <p>Empowering our young minds through education & sports.</p>
-  </header>
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
 
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="books.html">Books</a>
-    <a href="tutoring.html">Tutoring</a>
-  </nav>
+.navbar a {
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  transition: background 0.3s, color 0.3s;
+}
 
-  <!-- HERO SECTION WITH ELEPHANT BACKGROUND -->
-  <section class="hero">
-    <h1>Welcome to: Lithako Edu & Sports</h1>
-    <p>
-      Our structured training programs are tailored for learners aged 5 to 15, combining academic support with high-performance sports development across Football, Basketball, Netball, Athletics, and more.
-      <br><br>
-      With qualified coaches, safe facilities, and results-driven programs, we empower every child to reach their full potential — academically, physically, and mentally.
-      <br><br>
-      We’re here to nurture their confidence, teach teamwork, and show them that dedication pays off both in the classroom and on the field.
-      <br><br>
-      Through our balanced approach to education and sport, children learn discipline, respect, and resilience — values that will carry them far beyond the now.
-      <br><br>
-      Developing complete athletes, because every child deserves a chance.
-    </p>
+.navbar a:hover,
+.navbar a.active {
+  background: var(--blue);
+  color: var(--black);
+}
 
-    <div class="buttons">
-      <button onclick="window.location.href='books.html'">📚 Explore Our Books</button>
-      <button onclick="window.location.href='tutoring.html'">🎓 Join Our Tutoring</button>
-    </div>
-  </section>
+/* HERO IMAGE */
+.hero-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
 
-  <!-- ABOUT SECTION -->
-  <section class="bio">
-    <h2>About Ranneile Lesupi</h2>
-    <p><strong>Ranneile Lesupi</strong> — Sports Coach & Business Visionary. A storyteller at heart. Through <strong>Lithako Edu & Sports</strong>, he mentors and develops young learners and athletes aged 5–15, guiding them to become confident scholars and disciplined champions.</p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    &copy; 2025 Lithako Edu & Sports. All rights reserved.<br>
-    <small>Contact: <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></small>
-  </footer>
-
-</body>
-</html>
+/* LIGHT SECTION */
+.section.light {
+  background: var(--white);
+}
