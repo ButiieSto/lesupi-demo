@@ -4,30 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lithako Edu – The Loony Hypochondriacs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/a2e0f1f0d4.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
   <!-- HEADER -->
   <header>
-    <img src="Lithako-logo.png" alt="Lithako Edu & Sports Logo">
-    <h1>Lithako Edu</h1>
+    <img src="Lithako-logo.png" alt="Lithako Edu & Sports Logo" />
+    <h1><strong>Lithako Edu & Sports</strong></h1>
     <p>Order <em>The Loony Hypochondriacs</em> Today</p>
   </header>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="books.html">Books</a>
-    <a href="tutoring.html">Tutoring</a>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="books.html" class="active">Books</a></li>
+      <li><a href="tutoring.html">Tutoring</a></li>
+    </ul>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <img src="tlh-cover.jpg" alt="The Loony Hypochondriacs Book Cover" class="book-cover">
+    <img src="tlh-cover.jpg" alt="The Loony Hypochondriacs Book Cover" class="book-cover" />
     <div class="buttons">
-      <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">📖 Order Now</button>
+      <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">
+        📖 Order Now
+      </button>
     </div>
   </section>
 
@@ -38,9 +43,7 @@
     <p>Here, wellness is currency, therapy is mandatory, and your daily dose of medication isn't just encouraged — it's celebrated. From Diagnosipops™ to Sadness Management Seminars, everyone's a proud patient. Feeling fine? You're clearly in denial.</p>
     <p>Enter Hloux, a quiet skeptic with a suspiciously clean medical record. When a chance encounter with a rebellious soul named Noni exposes him to the glitch beneath the system's polished smile, Hloux begins to see the truth: They don't need to drug you — just convince you to medicate yourself.</p>
     <p>Together they descend into the pharmaceutical funhouse, dodging Side-Effect Evangelists, Dopamine Influencers, and pill-pushing prophets. Beneath the synthetic joy and curated neuroses, something unmedicated is waking up... and it's not approved by the Council of Diagnostics™.</p>
-    <div class="buttons">
-      <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">📘 Order Now</button>
-    </div>
+    <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">📘 Order Now</button>
   </section>
 
   <!-- ORDER DETAILS -->
@@ -50,7 +53,7 @@
       <p><strong>Price:</strong> R369 (excluding delivery)</p>
       <p><strong>Payment Method:</strong> EFT Only</p>
       <p><strong>Bank:</strong> Capitec Business<br>
-         <strong>Account Name:</strong> Lithako Edu and Sports<br>
+         <strong>Account Name:</strong> <b>Lithako Edu & Sports</b><br>
          <strong>Account Number:</strong> 1051 3359 06</p>
       <p><strong>Reference:</strong> Your Full Name + <code>#TLH</code></p>
       <p>Send proof of payment to: <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></p>
@@ -61,19 +64,18 @@
   <section class="section">
     <h2>What Readers Are Saying</h2>
     <div class="testimonial">
-      <p><em>"I loved it, as it was very quirky, funny and thought-provoking."</em></p>
+      <p><em>"I loved it — very quirky, funny, and thought-provoking."</em></p>
     </div>
     <div class="testimonial">
       <p><em>"A brilliantly satirical romp through the neuroses of a truly unforgettable character. Each page had me laughing out loud, sometimes in disbelief, often in recognition. If you enjoy satire with a touch of madness, this is the perfect read."</em></p>
     </div>
   </section>
 
-  <!-- ABOUT AUTHOR -->
-  <section class="section">
+  <!-- ABOUT THE AUTHOR -->
+  <section class="section light">
     <h2>About the Author</h2>
     <div class="bio-box">
-      <p><strong>Ranneile Lesupi</strong> — Sports Coach & Business Visionary. A storyteller at heart. He is a dynamic entrepreneur, creative force, and author whose ventures span across industry and imagination.</p>
-      <p>Through <strong>Lithako Edu & Sports</strong>, he coaches and mentors children aged 5–15, nurturing tomorrow’s champions both on the field and in their lives. His ventures across hospitality, tech, and fashion all share a single purpose: empowering the next generation.</p>
+      <p><strong>Ranneile Lesupi</strong> — Sports Coach & Business Visionary. A storyteller at heart. Through <strong>Lithako Edu & Sports</strong>, he mentors and develops young learners and athletes aged 5–15, guiding them to become confident scholars and disciplined champions.</p>
     </div>
   </section>
 
@@ -85,35 +87,29 @@
       No, delivery is charged separately. You can choose between Pep Paxi, Pudo, or PostNet.</p>
 
       <p><strong>Do you ship outside South Africa?</strong><br>
-      Yes, we offer worldwide shipping.</p>
+      Yes, worldwide shipping is available.</p>
 
       <p><strong>When will I receive my book?</strong><br>
       Orders will ship at the end of September 2025 once printing is completed.</p>
     </details>
   </section>
 
-  <!-- THANK YOU -->
-  <section class="section thank-you">
-    <h2>Thank You!</h2>
-    <p>Thank you for your support in bringing <em>The Loony Hypochondriacs</em> to life. We can’t wait for you to enjoy your copy soon!</p>
-  </section>
-
   <!-- CONTACT -->
-  <section class="section contact-box">
+  <section class="section contact">
     <h2>Contact Us</h2>
-    <p><strong>Email:</strong> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a><br>
-       <strong>Phone:</strong> +27 67 265 6319<br>
-       <strong>Location:</strong> City of Matlosana</p>
+    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></p>
+    <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +27 67 265 6319</p>
+    <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> City of Matlosana</p>
   </section>
 
-  <!-- BACK BUTTON -->
+  <!-- BACK HOME -->
   <div class="back-home">
     <button onclick="window.location.href='index.html'">⬅️ Back to Home</button>
   </div>
 
   <!-- FOOTER -->
   <footer>
-    &copy; 2025 Lithako Edu. All rights reserved.
+    &copy; 2025 <strong>Lithako Edu & Sports</strong>. All rights reserved.
   </footer>
 
 </body>
