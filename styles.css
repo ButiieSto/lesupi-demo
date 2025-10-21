@@ -1,233 +1,131 @@
-/* ===================================
-   Lithako Edu & Sports – styles.css
-   =================================== */
-
 /* General Styles */
 body {
-  margin: 0;
   font-family: 'Poppins', sans-serif;
+  margin: 0;
   background-color: #f1f8ff;
   color: #002b5b;
   line-height: 1.6;
 }
 
-/* Header */
+/* Header and Navbar */
 header {
   text-align: center;
-  background: #002b5b;
-  color: white;
-  padding: 2rem 1rem;
+  background-color: white;
+  padding: 1rem 0;
 }
 
-header h1 {
-  font-size: 2.2rem;
-  margin: 0;
-}
-
-header p {
-  font-size: 1.1rem;
-  margin-top: 0.5rem;
-}
-
-/* Logo Header (Home Page Only) */
-.full-logo-header {
-  background: #e5e5e5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 33vh; /* one-third of the screen */
-  border-bottom: 8px solid #aee0ff;
-}
-
-.full-logo {
-  width: 90%;
-  max-width: 900px;
+.logo {
+  width: 180px;
   height: auto;
-  border: 10px solid #aee0ff;
-  border-radius: 16px;
-  background-color: #f0f0f0;
-  object-fit: contain;
 }
 
-/* Navbar */
-nav {
+.navbar {
+  background-color: #005fa3;
+  padding: 0.6rem 0;
+  border-radius: 0 0 8px 8px;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background: #0077cc;
-  padding: 0.8rem 0;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
-nav a {
-  color: white;
+.navbar a {
   text-decoration: none;
+  color: white;
   font-weight: 600;
-  font-size: 1.05rem;
   transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: #aee0ff;
+.navbar a:hover,
+.navbar a.active {
+  color: #cce7ff;
 }
 
-/* Hero Section (Book Page) */
-.hero {
+/* Intro Section */
+.intro {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 1rem;
 }
 
-.hero img {
-  max-width: 300px;
-  width: 80%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1rem;
+.intro h1 {
+  color: #002b5b;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
 }
 
-.hero button {
-  background: #005fa3;
-  color: white;
-  border: none;
-  padding: 0.8rem 1.8rem;
+.intro .tagline {
+  font-style: italic;
+  color: #003d80;
   font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
 }
 
-.hero button:hover {
-  background: #00487d;
-}
-
-/* Section Boxes */
-.section {
-  max-width: 900px;
+/* Content Boxes */
+.content-box {
+  background-color: #ffffff;
+  border: 2px solid #005fa3;
+  border-radius: 10px;
+  max-width: 800px;
   margin: 2rem auto;
   padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 
-.box,
-.testimonial,
-.bio-box,
-.faq,
-.contact-box {
-  background: #ffffff;
-  border-left: 5px solid #2a628f;
-  padding: 1.5rem;
-  border-radius: 12px;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+.content-box h2 {
+  color: #002b5b;
 }
 
-/* Center Buttons (Home Page) */
-.center-buttons {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-/* Buttons (Global CTA) */
 .cta-button {
-  background: #004c99;
+  background-color: #005fa3;
   color: white;
-  padding: 0.8rem 1.8rem;
   border: none;
-  border-radius: 8px;
-  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
   cursor: pointer;
-  margin-top: 0.5rem;
-  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-  background: #003366;
-  transform: translateY(-2px);
-}
-
-/* Back Button */
-.back-home {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.back-home button {
-  background: #0077cc;
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.back-home button:hover {
-  background: #005fa3;
-  transform: translateY(-2px);
+  background-color: #00467a;
 }
 
 /* Contact Section */
-.contact-box {
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-}
-
-.contact-box a {
-  color: #004c99;
-  text-decoration: none;
-}
-
-.contact-box a:hover {
-  text-decoration: underline;
-}
-
-/* FAQ Section */
-.faq summary {
-  font-weight: 600;
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-
-.faq summary::before {
-  content: "🚚 ";
-}
-
-.faq p {
-  margin-top: 1rem;
+.contact strong {
+  color: #002b5b;
 }
 
 /* Footer */
 footer {
-  background: #002b5b;
+  background-color: #002b5b;
   color: white;
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
+  margin-top: 2rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 /* Responsive */
-@media (max-width: 700px) {
-  nav a {
-    margin: 0.5rem;
-    font-size: 0.95rem;
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: row;
+    gap: 1rem;
   }
 
-  header h1 {
-    font-size: 1.8rem;
-  }
-
-  .section {
+  .content-box {
+    margin: 1rem;
     padding: 1rem;
   }
 
-  .full-logo {
-    width: 95%;
+  .intro h1 {
+    font-size: 1.5rem;
   }
 }
