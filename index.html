@@ -4,64 +4,62 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lithako Edu & Sports</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-  <!-- LOGO SECTION -->
-  <header class="full-logo-header">
-    <img src="Lithako-logo.png" alt="Lithako Edu & Sports Logo" class="full-logo">
+  <header>
+    <img src="Lithako-logo.png" alt="Lithako Edu & Sports Logo" class="logo" />
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="tutoring.html">Tutoring</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="books.html">Books</a>
-    <a href="tutoring.html">Tutoring</a>
-  </nav>
-
-  <!-- MAIN INTRO -->
-  <section class="section" style="text-align:center;">
-    <h2>Welcome to: <strong>Lithako Edu & Sports</strong></h2>
-    <p><em>Empowering our young minds through education & sports.</em></p>
+  <section class="intro">
+    <h1>Welcome to: <strong>Lithako Edu & Sports</strong></h1>
+    <p class="tagline">Empowering our young minds through education & sports.</p>
   </section>
 
-  <section class="section">
-    <div class="box">
-      <p>Our structured training programs are tailored for learners aged 5 to 15, combining academic support with high-performance sports development across Football, Basketball, Netball, Athletics, and more.</p>
-      <p>With qualified coaches, safe facilities, and results-driven programs, we empower every child to reach their full potential — academically, physically, and mentally.</p>
-      <p>We’re here to nurture their confidence, teach teamwork, and show them that dedication pays off both in the classroom and on the field.</p>
-      <p>Through our balanced approach to education and sport, children learn discipline, respect, and resilience — values that will carry them far beyond the now.</p>
-      <p><strong>Developing Complete Athletes, because every child deserves a chance.</strong></p>
-    </div>
+  <section class="content-box">
+    <p>
+      Our structured training programs are tailored for learners aged 5 to 15,
+      combining physical fitness, teamwork, and academic excellence.
+    </p>
   </section>
 
-  <!-- CALL TO ACTION BUTTONS -->
-  <div class="center-buttons" style="display:flex; flex-direction:column; align-items:center; gap:1rem;">
-    <button class="cta-button" onclick="window.location.href='books.html'">📚 Explore Our Books</button>
-    <button class="cta-button" onclick="window.location.href='tutoring.html'">🎓 Join Our Tutoring</button>
-  </div>
-
-  <!-- ABOUT -->
-  <section class="section">
-    <div class="bio-box">
-      <h2>About Ranneile Lesupi</h2>
-      <p><strong>Ranneile Lesupi</strong> – Sports Coach & Business Visionary. A storyteller at heart.</p>
-    </div>
+  <section class="content-box">
+    <h2>Explore Our Books</h2>
+    <p>Dive into exciting and educational books that inspire growth and creativity in young readers.</p>
+    <button onclick="window.location.href='books.html'" class="cta-button">Explore Our Books</button>
   </section>
 
-  <!-- CONTACT -->
-  <section class="section contact-box" style="text-align:center; max-width:900px; margin:auto;">
+  <section class="content-box">
+    <h2>Join Our Tutoring Program</h2>
+    <p>Our tutoring sessions are designed to strengthen learning foundations and build confidence.</p>
+    <button onclick="window.location.href='tutoring.html'" class="cta-button">Join Our Tutoring</button>
+  </section>
+
+  <section class="content-box">
+    <h2>About Ranneile Lesupi</h2>
+    <p>
+      Ranneile Lesupi is a visionary founder, coach, and creative who blends education, sports,
+      and storytelling to empower the youth through Lithako Edu & Sports.
+    </p>
+  </section>
+
+  <section class="content-box contact">
     <h2>Contact Us</h2>
-    <p>📧 <strong>Email:</strong> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a><br>
-       📞 <strong>Phone:</strong> +27 67 265 6319<br>
-       📍 <strong>Location:</strong> City of Matlosana</p>
+    <p><strong>Email:</strong> lithakoedu@gmail.com</p>
+    <p><strong>Phone:</strong> +27 67 265 6319</p>
+    <p><strong>Location:</strong> City of Matlosana</p>
   </section>
 
   <footer>
-    &copy; 2025 Lithako Edu & Sports. All rights reserved.
+    <p><strong>Lithako Edu & Sports</strong> &copy; 2025. All Rights Reserved.</p>
   </footer>
-
 </body>
 </html>
