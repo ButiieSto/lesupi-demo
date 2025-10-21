@@ -1,3 +1,7 @@
+/* ===================================
+   Lithako Edu & Sports – styles.css
+   =================================== */
+
 /* General Styles */
 body {
   margin: 0;
@@ -25,19 +29,40 @@ header p {
   margin-top: 0.5rem;
 }
 
+/* Logo Header (Home Page Only) */
+.full-logo-header {
+  background: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 33vh; /* one-third of the screen */
+  border-bottom: 8px solid #aee0ff;
+}
+
+.full-logo {
+  width: 90%;
+  max-width: 900px;
+  height: auto;
+  border: 10px solid #aee0ff;
+  border-radius: 16px;
+  background-color: #f0f0f0;
+  object-fit: contain;
+}
+
 /* Navbar */
 nav {
   display: flex;
   justify-content: center;
+  align-items: center;
   background: #0077cc;
   padding: 0.8rem 0;
   flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 0 1.2rem;
   font-weight: 600;
   font-size: 1.05rem;
   transition: color 0.3s ease;
@@ -47,7 +72,7 @@ nav a:hover {
   color: #aee0ff;
 }
 
-/* Hero Section */
+/* Hero Section (Book Page) */
 .hero {
   text-align: center;
   padding: 2rem 1rem;
@@ -58,6 +83,7 @@ nav a:hover {
   width: 80%;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
 }
 
 .hero button {
@@ -68,7 +94,6 @@ nav a:hover {
   font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 1rem;
   transition: background 0.3s ease;
 }
 
@@ -81,13 +106,13 @@ nav a:hover {
   max-width: 900px;
   margin: 2rem auto;
   padding: 1.5rem;
+  text-align: center;
 }
 
 .box,
 .testimonial,
 .bio-box,
 .faq,
-.thank-you,
 .contact-box {
   background: #ffffff;
   border-left: 5px solid #2a628f;
@@ -95,6 +120,15 @@ nav a:hover {
   border-radius: 12px;
   margin-bottom: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Center Buttons (Home Page) */
+.center-buttons {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 /* Buttons (Global CTA) */
@@ -106,21 +140,13 @@ nav a:hover {
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 1rem;
-  transition: background 0.3s ease;
+  margin-top: 0.5rem;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .cta-button:hover {
   background: #003366;
-}
-
-/* Footer */
-footer {
-  background: #002b5b;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
+  transform: translateY(-2px);
 }
 
 /* Back Button */
@@ -138,16 +164,52 @@ footer {
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .back-home button:hover {
   background: #005fa3;
+  transform: translateY(-2px);
 }
 
-/* Center order buttons */
-.center-buttons {
+/* Contact Section */
+.contact-box {
+  max-width: 900px;
+  margin: auto;
   text-align: center;
+}
+
+.contact-box a {
+  color: #004c99;
+  text-decoration: none;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+}
+
+/* FAQ Section */
+.faq summary {
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.faq summary::before {
+  content: "🚚 ";
+}
+
+.faq p {
+  margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+  background: #002b5b;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
 }
 
 /* Responsive */
@@ -163,5 +225,9 @@ footer {
 
   .section {
     padding: 1rem;
+  }
+
+  .full-logo {
+    width: 95%;
   }
 }
