@@ -7,22 +7,27 @@ body {
   line-height: 1.6;
 }
 
-/* Header and Navbar */
-header {
-  text-align: center;
-  background-color: white;
-  padding: 1rem 0;
+/* Logo Section */
+.logo-container {
+  background-color: #b3d7ff; /* Light blue edge background */
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
-  width: 180px;
+  width: 100%;
+  max-width: 600px;
   height: auto;
+  border-radius: 8px;
+  display: block;
 }
 
+/* Navbar */
 .navbar {
   background-color: #005fa3;
-  padding: 0.6rem 0;
-  border-radius: 0 0 8px 8px;
+  padding: 0.7rem 0;
 }
 
 .navbar ul {
@@ -64,8 +69,8 @@ header {
   font-size: 1rem;
 }
 
-/* Content Boxes */
-.content-box {
+/* Info Box */
+.info-box {
   background-color: #ffffff;
   border: 2px solid #005fa3;
   border-radius: 10px;
@@ -76,8 +81,17 @@ header {
   text-align: center;
 }
 
-.content-box h2 {
+.info-box h2 {
   color: #002b5b;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem auto;
+  flex-wrap: wrap;
 }
 
 .cta-button {
@@ -88,17 +102,11 @@ header {
   font-size: 1rem;
   border-radius: 6px;
   cursor: pointer;
-  margin-top: 1rem;
   transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
   background-color: #00467a;
-}
-
-/* Contact Section */
-.contact strong {
-  color: #002b5b;
 }
 
 /* Footer */
@@ -109,8 +117,6 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
   margin-top: 2rem;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
 }
 
 /* Responsive */
@@ -120,12 +126,16 @@ footer {
     gap: 1rem;
   }
 
-  .content-box {
+  .info-box {
     margin: 1rem;
     padding: 1rem;
   }
 
   .intro h1 {
     font-size: 1.5rem;
+  }
+
+  .logo {
+    max-width: 100%;
   }
 }
