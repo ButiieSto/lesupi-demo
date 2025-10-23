@@ -5,100 +5,211 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lithako Edu – The Loony Hypochondriacs</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f1f8ff;
+      color: #003366;
+      line-height: 1.6;
+    }
+    header {
+      background: #000000;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+    nav {
+      background: #005fa3;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .hero img {
+      max-width: 300px;
+      width: 80%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .hero button, .cta-button {
+      background: #005fa3;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .section {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    .testimonial, .order-box, .thank-you {
+      background: #e0f0ff;
+      border-left: 4px solid #0077cc;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 6px;
+    }
+    .bio-box {
+      background: #ffffff;
+      color: #000000;
+      border-left: 4px solid #000000;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 6px;
+    }
+    .faq {
+      background: #ffffff;
+      color: #000000;
+      border-left: 4px solid #0077cc;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 6px;
+    }
+    .contact-box {
+      color: #000000;
+    }
+    footer {
+      background: #000000;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+    summary {
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    summary::marker {
+      content: "\25BC ";
+      font-size: 1rem;
+      color: #005fa3;
+    }
+    @media (max-width: 600px) {
+      .hero img {
+        max-width: 90%;
+      }
+    }
+  </style>
 </head>
 <body>
+<header>
+  <h1>Lithako Edu</h1>
+  <p>Order <em>The Loony Hypochondriacs</em> Today</p>
+</header>
 
-  <header>
-    <h1>Lithako Edu</h1>
-    <p>Order <em>The Loony Hypochondriacs</em> Today</p>
-  </header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="tutoring.html">Tutoring</a>
+</nav>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="books.html">Books</a>
-    <a href="tutoring.html">Tutoring</a>
-  </nav>
+<section class="hero">
+  <img src="tlh-cover.jpg" alt="The Loony Hypochondriacs Book Cover">
+  <br>
+  <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">Order Now</button>
+</section>
 
-  <section class="hero">
-    <img src="tlh-cover.jpg" alt="The Loony Hypochondriacs Book Cover">
-    <div class="center-buttons">
-      <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">Order Now</button>
-    </div>
-  </section>
+<section class="section">
+  <h2>About the Book</h2>
+  <p>Welcome to <strong>Hypercondria™</strong> — a flawless, medically optimized town where not having a disorder is the ultimate red flag.</p>
+  <p>Here, wellness is currency, therapy is mandatory, and your daily dose of medication isn't just encouraged — it's celebrated. From Diagnosipops™ to Sadness Management Seminars, everyone's a proud patient. Feeling fine? You're clearly in denial.</p>
+  <p>Enter Hloux, a quiet skeptic with a suspiciously clean medical record. When a chance encounter with a rebellious soul named Noni exposes him to the glitch beneath the system's polished smile, Hloux begins to see the truth: They don't need to drug you — just convince you to medicate yourself.</p>
+  <p>Together they descend into the pharmaceutical funhouse, dodging Side-Effect Evangelists, Dopamine Influencers, and pill-pushing prophets. Beneath the synthetic joy and curated neuroses, something unmedicated is waking up... and it's not approved by the Council of Diagnostics™.</p>
+  <button class="cta-button" onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">Order Now</button>
+</section>
 
-  <section class="section">
-    <h2>About the Book</h2>
-    <div class="box">
-      <p>Welcome to <strong>Hypercondria™</strong> — a flawless, medically optimized town where not having a disorder is the ultimate red flag.</p>
-      <p>Here, wellness is currency, therapy is mandatory, and your daily dose of medication isn't just encouraged — it's celebrated.</p>
-      <p>Enter Hloux, a quiet skeptic with a suspiciously clean medical record. When a chance encounter with a rebellious soul named Noni exposes him to the glitch beneath the system's polished smile, Hloux begins to see the truth.</p>
-      <p>Together they descend into the pharmaceutical funhouse, dodging Side-Effect Evangelists, Dopamine Influencers, and pill-pushing prophets. Beneath the synthetic joy and curated neuroses, something unmedicated is waking up... and it's not approved by the Council of Diagnostics™.</p>
-    </div>
-
-    <div class="center-buttons">
-      <button class="cta-button" onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">Order Now</button>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>About the Author</h2>
-    <div class="box">
-      <p><strong>Ranneile Lesupi</strong> — a passionate storyteller and sports mentor who fuses creativity and discipline. Through his work at <strong>Lithako Edu & Sports</strong>, he inspires young people to chase both intellectual and athletic excellence, while his writing captures the humor and humanity of modern life.</p>
-    </div>
-  </section>
-
-  <section class="section" id="order">
-    <h2>How to Order</h2>
-    <div class="box">
-      <p><strong>Price:</strong> R369 (excluding delivery)</p>
-      <p><strong>Payment Method:</strong> EFT Only</p>
-      <p><strong>Bank:</strong> Capitec Business<br>
-         <strong>Account Name:</strong> Lithako Edu and Sports<br>
-         <strong>Account Number:</strong> 1051 3359 06</p>
-      <p><strong>Reference:</strong> Your Full Name + <code>#TLH</code></p>
-      <p>Send proof of payment to: <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></p>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>What Readers Are Saying</h2>
-    <div class="testimonial">
-      <p><em>"I loved it, as it was very quirky, funny and thought-provoking."</em></p>
-    </div>
-    <div class="testimonial">
-      <p><em>"A brilliantly satirical romp through the neuroses of a truly unforgettable character. Each page had me laughing out loud, sometimes in disbelief, often in recognition. If you enjoy satire with a touch of madness, this is the perfect read."</em></p>
-    </div>
-  </section>
-
-  <section class="section">
-    <details class="faq" open>
-      <summary style="color: black;">🚚 Shipping FAQs</summary>
-      <p><strong>Is delivery included in the price?</strong><br>
-      No, delivery is charged separately. You can choose between Pep Paxi, Pudo, or PostNet.</p>
-
-      <p><strong>Do you ship outside South Africa?</strong><br>
-      Yes, we offer worldwide shipping.</p>
-
-      <p><strong>When will I receive my book?</strong><br>
-      Orders will ship at the end of September 2025 once pre-orders close and hard copies are printed.</p>
-    </details>
-  </section>
-
-  <section class="section contact-box" style="text-align:center; max-width:900px; margin:auto;">
-    <h2>Contact Us</h2>
-    <p>📧 <strong>Email:</strong> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a><br>
-       📞 <strong>Phone:</strong> +27 67 265 6319<br>
-       📍 <strong>Location:</strong> City of Matlosana</p>
-  </section>
-
-  <div class="back-home">
-    <button onclick="window.location.href='index.html'">⬅️ Back to Home</button>
+<section class="section" id="order">
+  <h2>How to Order</h2>
+  <div class="order-box">
+    <p><strong>Price:</strong> R369 (excluding delivery)</p>
+    <p><strong>Payment Method:</strong> EFT Only</p>
+    <p><strong>Bank:</strong> Capitec Business<br>
+       <strong>Account Name:</strong> Lithako Edu and Sports<br>
+       <strong>Account Number:</strong> 1051 3359 06</p>
+    <p><strong>Reference:</strong> Your Full Name + <code>#TLH</code></p>
+    <p>Send proof of payment to: <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></p>
   </div>
+</section>
 
-  <footer>
-    &copy; 2025 Lithako Edu. All rights reserved.
-  </footer>
+<section class="section">
+  <h2>What Readers Are Saying</h2>
+  <div class="testimonial">
+    <p><em>"I loved it, as it was very quirky, funny and thought-provoking."</em></p>
+  </div>
+  <div class="testimonial">
+    <p><em>"A brilliantly satirical romp through the neuroses of a truly unforgettable character. Each page had me laughing out loud, sometimes in disbelief, often in recognition. If you enjoy satire with a touch of madness, this is the perfect read."</em></p>
+  </div>
+</section>
+
+<section class="section">
+  <h2 style="color: black;">About the Author</h2>
+  <div class="bio-box">
+    <p><strong>Ranneile Lesupi</strong>, Sports Coach & Business Visionary. A Storyteller at heart.</p>
+    <p>Ranneile Lesupi is a dynamic entrepreneur, creative force, and author whose ventures span across industry and imagination. As the creative lifeblood behind Ranneile Projects, he leads innovative initiatives that defy conventional categories.</p>
+    <p>Through Lithako Edu & Sports, he also physically coaches and mentors children aged 5–15, nurturing tomorrow’s champions both on the field and in their lives. In hospitality, his company Maqhubu Hospitality brings authentic warmth and elegance to every guest experience. He’s also the tech-savvy founder of Lelomotech, providing seamless Solar installations, proprietary Wi-Fi line and router connectivity. His fashion label, RuntaFit Apparel, blends style with purpose; all of this operates under the strategic guidance of his powerhouse holdings firm, House Of Nneile, where he excels as COO.</p>
+    <p>On the page and screen, Ranneile channels his storytelling gift of writing books, music, series, and screenplay that speak loudly to his community and beyond. His work is bold, real, lyrical and unapologetic. Every venture he leads is more than a project—it’s a statement.</p>
+  </div>
+</section>
+
+<section class="section">
+  <details class="faq" open>
+    <summary style="color: black;">⬇️ Shipping FAQs</summary>
+    <p><strong>Is delivery included in the price?</strong><br>
+    No, delivery is charged separately. You can choose between Pep Paxi, Pudo, or PostNet.</p>
+
+    <p><strong>Do you ship outside South Africa?</strong><br>
+    Yes, we offer worldwide shipping.</p>
+
+    <p><strong>When will I receive my book?</strong><br>
+    Orders will ship at the end of September 2025 once orders close and hard copies are printed.</p>
+  </details>
+</section>
+
+<section class="section thank-you">
+  <h2>Thank You!</h2>
+  <p>Thank you for your interest in <em>The Loony Hypochondriacs</em>. Your support helps bring bold, fresh stories to life. We can't wait to deliver your copy soon!</p>
+</section>
+
+<section class="section contact-box">
+  <h2>Contact Us</h2>
+  <p><strong>Email:</strong> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a><br>
+     <strong>Phone:</strong> +27 67 265 6319<br>
+     <strong>Location:</strong> City of Matlosana</p>
+</section>
+
+<section class="section">
+  <button class="cta-button" onclick="window.location.href='index.html'">⬅️ Back to Home</button>
+</section>
+
+<footer>
+  &copy; 2025 Lithako Edu. All rights reserved.
+</footer>
 
 </body>
 </html>
