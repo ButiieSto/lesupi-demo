@@ -5,32 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lithako Edu – Tutoring Service</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f1f8ff;
+      color: #003366;
+      line-height: 1.6;
+    }
+    header {
+      background: #000000;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+    nav {
+      background: #005fa3;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+    }
+    .details, .order-box {
+      background: #ffffff;
+      border-left: 4px solid #0077cc;
+      padding: 1.5rem;
+      border-radius: 8px;
+      color: #000000;
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+    .cta-button {
+      background: #005fa3;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 2rem;
+    }
+    footer {
+      background: #000000;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+    .back-home {
+      text-align: center;
+      margin: 2rem 0;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- HEADER -->
   <header>
-    <img src="Lithako-logo.png" alt="Lithako Edu & Sports Logo">
     <h1>Lithako Edu Tutoring Service</h1>
     <p>“U decide – Onsite or Online”</p>
   </header>
 
-  <!-- NAVIGATION -->
   <nav>
     <a href="index.html">Home</a>
-    <a href="books.html">Books</a>
     <a href="tutoring.html">Tutoring</a>
   </nav>
 
-  <!-- MAIN CONTENT -->
-  <section class="hero">
-    <img src="Lithako-Tutoring-Service.jpg" alt="Lithako Tutoring Service Poster" class="book-cover">
+  <section>
+    <img src="Lithako-Tutoring-Service.jpg" alt="Lithako Tutoring Service Poster">
+    
     <div class="details">
       <h2>Our Tutoring Offer</h2>
       <p><strong>Grades:</strong> 1 – 9</p>
       <p><strong>Subjects:</strong> All Subjects</p>
-      <p><strong>Rate:</strong> R190 per hour</p>
+      <p><strong>Rate:</strong> Only R190 per hour</p>
       <p><strong>Mode:</strong> You decide — Onsite or Online</p>
       <p><strong>Contact Us:</strong></p>
       <ul>
@@ -38,17 +111,25 @@
         <li><strong>Email:</strong> <a href="mailto:info@lithakoeduandsports.co.za">info@lithakoeduandsports.co.za</a></li>
       </ul>
     </div>
+
+    <div class="order-box">
+      <h2>How to Book a Tutoring Session</h2>
+      <p><strong>Price:</strong> R190 per hour</p>
+      <p><strong>Payment Method:</strong> EFT Only</p>
+      <p><strong>Bank:</strong> Capitec Business<br>
+         <strong>Account Name:</strong> Lithako Edu and Sports<br>
+         <strong>Account Number:</strong> 1051 3359 06</p>
+      <p><strong>Reference:</strong> Your Full Name + <code>#Tutoring</code></p>
+      <p>Send proof of payment to: <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></p>
+    </div>
+
+    <div class="back-home">
+      <button class="cta-button" onclick="window.location.href='index.html'">⬅️ Back to Home</button>
+    </div>
   </section>
 
-  <!-- BACK BUTTON -->
-  <div class="back-home">
-    <button onclick="window.location.href='index.html'">⬅️ Back to Home</button>
-  </div>
-
-  <!-- FOOTER -->
   <footer>
     &copy; 2025 Lithako Edu. All rights reserved.
   </footer>
-
 </body>
 </html>
