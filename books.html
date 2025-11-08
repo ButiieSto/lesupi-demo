@@ -10,6 +10,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -34,6 +38,7 @@
     }
 
     header p {
+      font-family: 'Poppins', sans-serif;
       font-size: 1.1rem;
       margin-top: 0.5rem;
       color: #add8e6;
@@ -59,9 +64,9 @@
       transition: color 0.3s ease;
     }
 
-    nav a i { color: white; }
-
-    nav a:hover { color: #aee0ff; }
+    nav a:hover {
+      color: #aee0ff;
+    }
 
     /* Hero */
     .hero {
@@ -115,52 +120,50 @@
     .accordion {
       max-width: 900px;
       margin: 1.5rem auto;
-    }
-
-    .accordion-item {
       background: #fff;
+      border-radius: 8px;
       border-left: 4px solid #0077cc;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
       overflow: hidden;
-      transition: all 0.3s ease;
     }
 
     .accordion-header {
       background: #005fa3;
       color: white;
-      padding: 1rem 1.2rem;
+      padding: 1rem;
       cursor: pointer;
       font-weight: 600;
       display: flex;
       align-items: center;
       justify-content: space-between;
       font-size: 1.1rem;
-      user-select: none;
-      transition: background 0.3s ease;
     }
-
-    .accordion-header:hover { background: #00487d; }
 
     .accordion-header i {
       transition: transform 0.3s ease;
     }
 
     .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s ease;
-      padding: 0 1.2rem;
+      display: block;
+      padding: 1rem 1.5rem;
     }
 
-    .accordion-item.active .accordion-content {
-      max-height: 600px;
-      padding: 1.2rem;
+    .accordion.closed .accordion-content {
+      display: none;
     }
 
-    .accordion-item.active .accordion-header i {
-      transform: rotate(180deg);
+    /* Thank You Box */
+    .thank-you {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: #ffffff;
+      border-left: 4px solid #0077cc;
+      border-radius: 8px;
+      color: #000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: center;
+      font-style: italic;
     }
 
     /* Contact Section */
@@ -183,6 +186,32 @@
       gap: 0.5rem;
       font-size: 2rem;
       color: #005fa3;
+    }
+
+    .contact-intro {
+      color: #333;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .contact-list li {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    .contact-list a {
+      color: #005fa3;
+      text-decoration: none;
+    }
+
+    .contact-list a:hover {
+      text-decoration: underline;
     }
 
     /* Back to Home */
@@ -221,7 +250,9 @@
       font-size: 0.9rem;
     }
 
-    html { scroll-behavior: smooth; }
+    @media (max-width: 700px) {
+      nav a { font-size: 0.95rem; }
+    }
   </style>
 </head>
 <body>
@@ -239,67 +270,76 @@
 
   <section class="hero">
     <img src="tlh-cover.jpg" alt="The Loony Hypochondriacs Book Cover">
-    <button class="cta-button pulse" onclick="document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' })">
+    <button class="cta-button pulse" onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">
       <i class="fas fa-shopping-cart"></i> Order Now
     </button>
     <p class="highlight">🔥 Limited stock — secure your copy today!</p>
   </section>
 
+  <section class="about-book">
+    <h2 style="text-align:center; color:#005fa3;"><i class="fas fa-book-open"></i> About the Book</h2>
+    <p style="max-width:900px; margin:1rem auto;">Welcome to <strong>Hypercondria™</strong> — a flawless, medically optimized town where not having a disorder is the ultimate red flag.</p>
+    <p style="max-width:900px; margin:1rem auto;">Here, wellness is currency, therapy is mandatory, and your daily dose of medication isn't just encouraged — it's celebrated.</p>
+    <p style="max-width:900px; margin:1rem auto;">Enter Hloux, a quiet skeptic with a suspiciously clean medical record. When a chance encounter with a rebellious soul named Noni exposes him to the glitch beneath the system's polished smile, Hloux begins to see the truth.</p>
+    <p style="max-width:900px; margin:1rem auto;">Together they descend into the pharmaceutical funhouse, dodging Side-Effect Evangelists, Dopamine Influencers, and pill-pushing prophets. Beneath the synthetic joy and curated neuroses, something unmedicated is waking up... and it's not approved by the Council of Diagnostics™.</p>
+  </section>
+
+  <div style="text-align:center;">
+    <button class="cta-button pulse" onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">
+      <i class="fas fa-shopping-cart"></i> Order Now
+    </button>
+  </div>
+
+  <section id="order">
+    <h2 style="text-align:center; color:#005fa3;"><i class="fas fa-credit-card"></i> How to Order</h2>
+    <p style="max-width:900px; margin:1rem auto;"><strong>Price:</strong> R369 (excluding delivery)</p>
+    <p style="max-width:900px; margin:1rem auto;"><strong>Payment Method:</strong> EFT Only</p>
+    <p style="max-width:900px; margin:1rem auto;"><strong>Bank:</strong> Capitec Business<br>
+      <strong>Account Name:</strong> Lithako Edu and Sports<br>
+      <strong>Account Number:</strong> 1051 3359 06</p>
+    <p style="max-width:900px; margin:1rem auto;"><strong>Reference:</strong> Your Full Name + <code>#TLH</code></p>
+    <p style="max-width:900px; margin:1rem auto;">Send proof of payment to: <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></p>
+    <p style="max-width:900px; margin:1rem auto;">💳 Safe & simple EFT payment with proof verification.<br>📦 Delivery available nationwide.</p>
+  </section>
+
   <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <span><i class="fas fa-book-open"></i> About the Book</span>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <div class="accordion-content">
-        <p>Welcome to <strong>Hypercondria™</strong> — a flawless, medically optimized town where not having a disorder is the ultimate red flag.</p>
-        <p>Here, wellness is currency, therapy is mandatory, and your daily dose of medication isn't just encouraged — it's celebrated.</p>
-        <p>Enter Hloux, a quiet skeptic with a suspiciously clean medical record. When a chance encounter with a rebellious soul named Noni exposes him to the glitch beneath the system's polished smile, Hloux begins to see the truth.</p>
-        <p>Together they descend into the pharmaceutical funhouse, dodging Side-Effect Evangelists, Dopamine Influencers, and pill-pushing prophets. Beneath the synthetic joy and curated neuroses, something unmedicated is waking up... and it's not approved by the Council of Diagnostics™.</p>
-        <button class="cta-button pulse" onclick="document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' })">
-          <i class="fas fa-shopping-cart"></i> Order Now
-        </button>
-      </div>
+    <div class="accordion-header">
+      <span><i class="fas fa-comment-dots"></i> What Readers Are Saying</span>
+      <i class="fas fa-chevron-down"></i>
     </div>
+    <div class="accordion-content">
+      <p><em>"I loved it, as it was very quirky, funny and thought-provoking."</em></p>
+      <p><em>"A brilliantly satirical romp through the neuroses of a truly unforgettable character. Each page had me laughing out loud, sometimes in disbelief, often in recognition. If you enjoy satire with a touch of madness, this is the perfect read."</em></p>
+    </div>
+  </div>
 
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <span><i class="fas fa-user-tie"></i> About the Author</span>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <div class="accordion-content">
-        <p><strong>Ranneile Lesupi</strong> — a passionate storyteller and sports mentor who fuses creativity and discipline. Through his work at <strong>Lithako Edu & Sports</strong>, he inspires young people to chase both intellectual and athletic excellence, while his writing captures the humor and humanity of modern life.</p>
-      </div>
+  <div class="accordion">
+    <div class="accordion-header">
+      <span><i class="fas fa-user-tie"></i> About the Author</span>
+      <i class="fas fa-chevron-down"></i>
     </div>
+    <div class="accordion-content">
+      <p><strong>Ranneile Lesupi</strong>, Sports Coach & Business Visionary. A storyteller at heart.</p>
+      <p>Ranneile Lesupi is a dynamic entrepreneur, creative force, and author whose ventures span across industry and imagination. As the creative lifeblood behind <strong>Ranneile Projects</strong>, he leads innovative initiatives that defy conventional categories.</p>
+      <p>Through <strong>Lithako Edu & Sports</strong>, he coaches and mentors children aged 5–15, nurturing tomorrow’s champions. His company <strong>Maqhubu Hospitality</strong> brings authentic warmth and elegance to every guest experience, while <strong>Lelomotech</strong> delivers seamless solar installations and connectivity. His fashion label, <strong>RuntaFit Apparel</strong>, blends style with purpose — all under <strong>House Of Nneile</strong>, where he serves as COO.</p>
+      <p>On the page and screen, Ranneile channels his storytelling gift through books, music, and screenplays that speak to his community and beyond. His work is bold, real, lyrical, and unapologetic — every venture a statement.</p>
+    </div>
+  </div>
 
-    <div id="order-section" class="accordion-item">
-      <div class="accordion-header">
-        <span><i class="fas fa-credit-card"></i> How to Order</span>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <div class="accordion-content">
-        <p><strong>Price:</strong> R369 (excluding delivery)</p>
-        <p><strong>Payment Method:</strong> EFT Only</p>
-        <p><strong>Bank:</strong> Capitec Business<br>
-           <strong>Account Name:</strong> Lithako Edu and Sports<br>
-           <strong>Account Number:</strong> 1051 3359 06</p>
-        <p><strong>Reference:</strong> Your Full Name + <code>#TLH</code></p>
-        <p>Send proof of payment to: <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></p>
-        <p>💳 Safe & simple EFT payment with proof verification.<br>📦 Delivery available nationwide.</p>
-      </div>
+  <div class="accordion">
+    <div class="accordion-header">
+      <span><i class="fas fa-truck"></i> Shipping FAQs</span>
+      <i class="fas fa-chevron-down"></i>
     </div>
+    <div class="accordion-content">
+      <p><strong>Is delivery included in the price?</strong><br>No, delivery is charged separately. Choose Pep Paxi, Pudo, or PostNet.</p>
+      <p><strong>Do you ship outside South Africa?</strong><br>Yes, we offer worldwide shipping.</p>
+      <p><strong>When will I receive my book?</strong><br>Orders will ship at the end of September 2025 once pre-orders close.</p>
+    </div>
+  </div>
 
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <span><i class="fas fa-truck"></i> Shipping FAQs</span>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <div class="accordion-content">
-        <p><strong>Is delivery included in the price?</strong><br>No, delivery is charged separately. You can choose between Pep Paxi, Pudo, or PostNet.</p>
-        <p><strong>Do you ship outside South Africa?</strong><br>Yes, we offer worldwide shipping.</p>
-        <p><strong>When will I receive my book?</strong><br>Orders will ship at the end of September 2025 once pre-orders close and hard copies are printed.</p>
-      </div>
-    </div>
+  <div class="thank-you">
+    <p>Thank you for your interest in <em>The Loony Hypochondriacs</em>. Your support helps bring bold, fresh stories to life. We can't wait to deliver your copy soon!</p>
   </div>
 
   <section class="contact-section">
@@ -321,12 +361,12 @@
   </footer>
 
   <script>
-    // Accordion toggle
-    const accordions = document.querySelectorAll('.accordion-item');
-    accordions.forEach(item => {
-      const header = item.querySelector('.accordion-header');
+    const accordions = document.querySelectorAll('.accordion');
+    accordions.forEach(acc => {
+      const header = acc.querySelector('.accordion-header');
+      const icon = header.querySelector('i.fas.fa-chevron-down');
       header.addEventListener('click', () => {
-        item.classList.toggle('active');
+        acc.classList.toggle('closed');
       });
     });
   </script>
