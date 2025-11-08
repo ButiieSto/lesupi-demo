@@ -146,6 +146,7 @@
       border-left: 4px solid #0077cc;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
       overflow: hidden;
+      transition: all 0.3s ease;
     }
 
     .accordion-header {
@@ -159,6 +160,19 @@
       justify-content: space-between;
       font-size: 1.1rem;
       user-select: none;
+      transition: background 0.3s ease;
+    }
+
+    .accordion-header:hover {
+      background: #00487d;
+    }
+
+    .accordion-header i.fa-chevron-down {
+      transition: transform 0.3s ease;
+    }
+
+    .accordion.open .accordion-header i.fa-chevron-down {
+      transform: rotate(180deg);
     }
 
     .accordion-content {
@@ -209,6 +223,40 @@
       gap: 0.5rem;
       font-size: 2rem;
       color: #005fa3;
+    }
+
+    /* Floating Buttons */
+    .floating-btn {
+      position: fixed;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 26px;
+      color: white;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .floating-btn i {
+      margin-top: 14px;
+    }
+
+    .floating-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float {
+      background-color: #25D366;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .email-float {
+      background-color: #0077cc;
+      bottom: 90px;
+      right: 20px;
     }
 
     /* Back to Home */
@@ -273,8 +321,7 @@
     <h2><i class="fas fa-book-open"></i> About the Book</h2>
     <p>Welcome to <strong>Hypercondria™</strong> — a flawless, medically optimized town where not having a disorder is the ultimate red flag.</p>
     <p>Here, wellness is currency, therapy is mandatory, and your daily dose of medication isn't just encouraged — it's celebrated.</p>
-    <p>Enter Hloux, a quiet skeptic with a suspiciously clean medical record. When a chance encounter with a rebellious soul named Noni exposes him to the glitch beneath the system's polished smile, Hloux begins to see the truth.</p>
-    <p>Together they descend into the pharmaceutical funhouse, dodging Side-Effect Evangelists, Dopamine Influencers, and pill-pushing prophets. Beneath the synthetic joy and curated neuroses, something unmedicated is waking up... and it's not approved by the Council of Diagnostics™.</p>
+    <p>Enter Hloux, a quiet skeptic with a suspiciously clean medical record...</p>
   </section>
 
   <div style="text-align:center;">
@@ -295,23 +342,22 @@
     <p>💳 Safe & simple EFT payment with proof verification.<br>📦 Delivery available nationwide.</p>
   </section>
 
-  <div class="accordion">
+  <div class="accordion open">
     <div class="accordion-header"><span><i class="fas fa-comment-dots"></i> What Readers Are Saying</span><i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
       <p><em>"I loved it, as it was very quirky, funny and thought-provoking."</em></p>
-      <p><em>"A brilliantly satirical romp through the neuroses of a truly unforgettable character. Each page had me laughing out loud, sometimes in disbelief, often in recognition. If you enjoy satire with a touch of madness, this is the perfect read."</em></p>
+      <p><em>"A brilliantly satirical romp through the neuroses of a truly unforgettable character..."</em></p>
     </div>
   </div>
 
-  <div class="accordion">
+  <div class="accordion open">
     <div class="accordion-header"><span><i class="fas fa-user-tie"></i> About the Author</span><i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
-      <p><strong>Ranneile Lesupi</strong>, Sports Coach & Business Visionary. A storyteller at heart.</p>
-      <p>Ranneile Lesupi is a dynamic entrepreneur, creative force, and author whose ventures span across industry and imagination...</p>
+      <p><strong>Ranneile Lesupi</strong>, Sports Coach & Business Visionary. A storyteller at heart...</p>
     </div>
   </div>
 
-  <div class="accordion">
+  <div class="accordion open">
     <div class="accordion-header"><span><i class="fas fa-truck"></i> Shipping FAQs</span><i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
       <p><strong>Is delivery included in the price?</strong><br>No, delivery is charged separately...</p>
@@ -331,6 +377,15 @@
     </ul>
   </section>
 
+  <!-- Floating Buttons -->
+  <a href="https://wa.me/27672656319" class="floating-btn whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <a href="mailto:lithakoedu@gmail.com" class="floating-btn email-float" title="Send us an Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+
   <div class="back-home">
     <button onclick="window.location.href='index.html'"><i class="fas fa-home"></i> Back to Home</button>
   </div>
@@ -344,6 +399,7 @@
     accordions.forEach(acc => {
       const header = acc.querySelector('.accordion-header');
       header.addEventListener('click', () => {
+        acc.classList.toggle('open');
         acc.classList.toggle('closed');
       });
     });
