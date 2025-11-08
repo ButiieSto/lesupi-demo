@@ -4,45 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lithako Edu – Tutoring Service</title>
-
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-aN9DwH9IQJtX1a6nZ6UeV0l2O+HFXM3e1XJqHJ1lVY9Z2o3kfrF+4+zz8yA0Tc0T3qVqKsx6/2I9qN7S3+RTOw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       background: #f1f8ff;
-      color: #000;
+      color: #003366;
       line-height: 1.6;
     }
 
     /* Header */
     header {
-      background: #000;
+      background: #000000;
       color: #add8e6;
       text-align: center;
       padding: 2rem 1rem;
     }
 
     header h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.5rem;
       margin: 0;
-      letter-spacing: 2px;
+      font-size: 2.4rem;
     }
 
     header p {
-      font-family: 'Poppins', sans-serif;
+      margin: 0.5rem 0 0;
       font-size: 1.1rem;
-      margin-top: 0.5rem;
-      color: #add8e6;
     }
 
     /* Navbar */
     nav {
-      background: #005fa3;
+      background: linear-gradient(to right, #005fa3, #004a84);
       display: flex;
       justify-content: center;
       gap: 2rem;
@@ -54,13 +47,21 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #add8e6;
     }
 
-    /* Main Section */
+    nav a.active {
+      border-bottom: 3px solid #add8e6;
+      padding-bottom: 0.3rem;
+    }
+
+    /* Content */
     section {
       max-width: 900px;
       margin: 2rem auto;
@@ -72,8 +73,7 @@
       max-width: 100%;
       height: auto;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      border: 3px solid #add8e6;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       margin-bottom: 1.5rem;
     }
 
@@ -82,48 +82,12 @@
       border-left: 4px solid #0077cc;
       padding: 1.5rem;
       border-radius: 8px;
-      color: #000;
+      color: #000000;
       text-align: left;
       margin-bottom: 1.5rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     }
 
-    .details h2, .order-box h2 {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: #005fa3;
-      font-size: 1.5rem;
-      margin-top: 0;
-    }
-
-    .details h2 i, .order-box h2 i {
-      color: #add8e6;
-    }
-
-    /* Tagline */
-    .tagline {
-      font-style: italic;
-      text-align: center;
-      color: #0077cc;
-      font-size: 1rem;
-      margin: 0.3rem 0 1rem 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul li {
-      margin: 0.5rem 0;
-    }
-
-    /* CTA Button */
     .cta-button {
       background: #005fa3;
       color: white;
@@ -133,206 +97,129 @@
       border-radius: 6px;
       cursor: pointer;
       margin-top: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      transition: all 0.3s ease;
+      transition: background 0.3s ease;
     }
 
     .cta-button:hover {
-      background: #00487d;
-      transform: scale(1.05);
+      background: #004a84;
     }
 
-    /* Contact Section */
-    .contact-section {
-      max-width: 800px;
-      margin: 3rem auto;
-      background: #ffffff;
-      border-left: 4px solid #0077cc;
-      border-radius: 8px;
-      padding: 1.5rem;
+    footer {
+      background: #000000;
+      color: white;
       text-align: center;
-      color: #000;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 1rem;
+      font-size: 0.9rem;
     }
 
-    .contact-section h2 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      font-size: 2rem;
-      color: #005fa3;
-    }
-
-    .contact-intro {
-      color: #333;
-      font-style: italic;
-      margin-bottom: 1rem;
-    }
-
-    .contact-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .contact-list li {
-      margin: 0.5rem 0;
-      font-size: 1rem;
-    }
-
-    .contact-list i {
-      margin-right: 8px;
-    }
-
-    .contact-list a {
-      color: #005fa3;
-      text-decoration: none;
-    }
-
-    .contact-list a:hover {
-      text-decoration: underline;
-    }
-
-    /* Back to Home */
     .back-home {
       text-align: center;
       margin: 2rem 0;
     }
 
-    .back-home button {
-      background: #005fa3;
-      color: white;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: 600;
+    /* Floating Buttons */
+    .float-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 1000;
+    }
+
+    .float-button {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      margin: 0 auto;
-      transition: all 0.3s ease;
-    }
-
-    .back-home button:hover {
-      background: #00487d;
-      transform: scale(1.05);
-    }
-
-    /* Floating WhatsApp Button (Mobile Only) */
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
       color: white;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      transition: all 0.3s ease;
+      font-size: 24px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
     }
 
-    .whatsapp-float i {
-      margin-top: 15px;
-    }
-
-    .whatsapp-float:hover {
+    .float-button:hover {
       transform: scale(1.1);
-      background-color: #1ebe5d;
     }
 
-    @media (min-width: 900px) {
-      .whatsapp-float {
-        display: none;
-      }
+    .float-email {
+      background: #005fa3;
     }
 
-    /* Responsive */
+    .float-whatsapp {
+      background: #25D366;
+    }
+
     @media (max-width: 700px) {
-      nav a { font-size: 0.95rem; }
-      section { padding: 1rem; }
-      .cta-button { width: 80%; }
+      nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      header h1 {
+        font-size: 1.9rem;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Lithako Edu Tutoring Service</h1>
     <p>“U decide – Onsite or Online”</p>
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="books.html">Books</a>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="books.html"><i class="fas fa-book"></i> Books</a>
+    <a href="tutoring.html" class="active"><i class="fas fa-graduation-cap"></i> Tutoring</a>
   </nav>
 
   <section>
     <img src="Lithako-Tutoring-Service.jpg" alt="Lithako Tutoring Service Poster">
-
+    
     <div class="details">
-      <h2><i class="fas fa-chalkboard-teacher"></i> Our Tutoring Offer</h2>
-      <p class="tagline"><i class="fas fa-lightbulb" style="color:#FFD700;"></i> “Building brighter futures, one learner at a time.”</p>
+      <h2>Our Tutoring Offer</h2>
       <p><strong>Grades:</strong> 1 – 9</p>
       <p><strong>Subjects:</strong> All Subjects</p>
       <p><strong>Rate:</strong> Only R190 per hour</p>
       <p><strong>Mode:</strong> You decide — Onsite or Online</p>
-
-      <h3 style="color:#005fa3; margin-top:1.5rem;"><i class="fas fa-bolt"></i> Quick Contact</h3>
+      <p><strong>Contact Us:</strong></p>
       <ul>
-        <li>
-          <i class="fab fa-whatsapp" style="color: #25D366;"></i>
-          <a href="https://wa.me/27672656319" target="_blank">+27 67 265 6319</a>
-        </li>
-        <li>
-          <i class="fas fa-envelope" style="color: #d93025;"></i>
-          <a href="mailto:info@lithakoeduandsports.co.za">info@lithakoeduandsports.co.za</a>
-        </li>
+        <li><strong>WhatsApp:</strong> <a href="https://wa.me/27672656319" target="_blank">+27 67 265 6319</a></li>
+        <li><strong>Email:</strong> <a href="mailto:info@lithakoeduandsports.co.za">info@lithakoeduandsports.co.za</a></li>
       </ul>
     </div>
 
     <div class="order-box">
-      <h2><i class="fas fa-credit-card"></i> How to Book a Tutoring Session</h2>
+      <h2>How to Book a Tutoring Session</h2>
       <p><strong>Price:</strong> R190 per hour</p>
       <p><strong>Payment Method:</strong> EFT Only</p>
       <p><strong>Bank:</strong> Capitec Business<br>
          <strong>Account Name:</strong> Lithako Edu and Sports<br>
          <strong>Account Number:</strong> 1051 3359 06</p>
       <p><strong>Reference:</strong> Your Full Name + <code>#Tutoring</code></p>
-      <p>Send proof of payment to: <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></p>
+      <p>Send proof of payment to: <a href="mailto:info@lithakoeduandsports.co.za">info@lithakoeduandsports.co.za</a></p>
+      <p><strong>💳 Safe & simple EFT payment with proof verification.</strong></p>
+    </div>
+
+    <div class="back-home">
+      <button class="cta-button" onclick="window.location.href='index.html'"><i class="fas fa-home"></i> Back to Home</button>
     </div>
   </section>
-
-  <section class="contact-section">
-    <h2><i class="fas fa-headset"></i> Contact Us</h2>
-    <p class="contact-intro">We’re here to help you schedule the right tutoring plan for your child.</p>
-    <ul class="contact-list">
-      <li><i class="fas fa-envelope" style="color:#d93025;"></i> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></li>
-      <li><i class="fab fa-whatsapp" style="color:#25D366;"></i> <a href="https://wa.me/27672656319" target="_blank">+27 67 265 6319</a></li>
-      <li><i class="fas fa-map-marker-alt" style="color:#005fa3;"></i> <a href="https://www.google.com/maps?q=City+of+Matlosana,+South+Africa" target="_blank">City of Matlosana, South Africa</a></li>
-    </ul>
-  </section>
-
-  <div class="back-home">
-    <button onclick="window.location.href='index.html'"><i class="fas fa-home" style="color:white;"></i> Back to Home</button>
-  </div>
-
-  <!-- WhatsApp Floating Button (Mobile Only) -->
-  <a href="https://wa.me/27672656319" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
 
   <footer>
     &copy; 2025 Lithako Edu. All rights reserved.
   </footer>
+
+  <!-- Floating Buttons -->
+  <div class="float-container">
+    <a href="mailto:info@lithakoeduandsports.co.za" class="float-button float-email" title="Email Us"><i class="fas fa-envelope"></i></a>
+    <a href="https://wa.me/27672656319" class="float-button float-whatsapp" target="_blank" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
 </body>
 </html>
