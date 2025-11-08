@@ -54,10 +54,18 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a i {
+      color: white;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #aee0ff;
     }
 
     /* Hero */
@@ -151,10 +159,6 @@
       border-left: 4px solid #0077cc;
     }
 
-    /* Icons */
-    .icon-blue { color: #add8e6; }
-    .icon-gold { color: #d4af37; }
-
     /* Contact Section */
     .contact-section {
       max-width: 800px;
@@ -174,6 +178,7 @@
       justify-content: center;
       gap: 0.5rem;
       font-size: 2rem;
+      color: #005fa3;
     }
 
     .contact-intro {
@@ -234,6 +239,42 @@
       transform: scale(1.05);
     }
 
+    /* Floating Buttons */
+    .floating-btn {
+      position: fixed;
+      width: 55px;
+      height: 55px;
+      bottom: 20px;
+      right: 20px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 26px;
+      color: white;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .floating-btn i {
+      margin-top: 14px;
+    }
+
+    .floating-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float {
+      background-color: #25D366;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .email-float {
+      background-color: #0077cc;
+      bottom: 90px;
+      right: 20px;
+    }
+
     footer {
       background: #000;
       color: white;
@@ -256,18 +297,19 @@
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="tutoring.html">Tutoring</a>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="books.html"><i class="fas fa-book"></i> Books</a>
+    <a href="tutoring.html"><i class="fas fa-graduation-cap"></i> Tutoring</a>
   </nav>
 
   <section class="hero">
     <img src="tlh-cover.jpg" alt="The Loony Hypochondriacs Book Cover">
-    <button class="cta-button pulse"><i class="fas fa-shopping-cart" style="color:white;"></i> Order Now</button>
+    <button class="cta-button pulse"><i class="fas fa-shopping-cart"></i> Order Now</button>
     <p class="highlight">🔥 Limited stock — secure your copy today!</p>
   </section>
 
   <details open>
-    <summary><i class="fas fa-book-open icon-blue"></i> About the Book</summary>
+    <summary><i class="fas fa-book-open"></i> About the Book</summary>
     <p>Welcome to <strong>Hypercondria™</strong> — a flawless, medically optimized town where not having a disorder is the ultimate red flag.</p>
     <p>Here, wellness is currency, therapy is mandatory, and your daily dose of medication isn't just encouraged — it's celebrated.</p>
     <p>Enter Hloux, a quiet skeptic with a suspiciously clean medical record. When a chance encounter with a rebellious soul named Noni exposes him to the glitch beneath the system's polished smile, Hloux begins to see the truth.</p>
@@ -275,12 +317,12 @@
   </details>
 
   <details open>
-    <summary><i class="fas fa-user-tie icon-gold"></i> About the Author</summary>
+    <summary><i class="fas fa-user-tie"></i> About the Author</summary>
     <p><strong>Ranneile Lesupi</strong> — a passionate storyteller and sports mentor who fuses creativity and discipline. Through his work at <strong>Lithako Edu & Sports</strong>, he inspires young people to chase both intellectual and athletic excellence, while his writing captures the humor and humanity of modern life.</p>
   </details>
 
   <details open>
-    <summary><i class="fas fa-credit-card icon-blue"></i> How to Order</summary>
+    <summary><i class="fas fa-credit-card"></i> How to Order</summary>
     <p><strong>Price:</strong> R369 (excluding delivery)</p>
     <p><strong>Payment Method:</strong> EFT Only</p>
     <p><strong>Bank:</strong> Capitec Business<br>
@@ -292,29 +334,37 @@
   </details>
 
   <details open>
-    <summary><i class="fas fa-truck icon-blue"></i> Shipping FAQs</summary>
+    <summary><i class="fas fa-truck"></i> Shipping FAQs</summary>
     <p><strong>Is delivery included in the price?</strong><br>No, delivery is charged separately. You can choose between Pep Paxi, Pudo, or PostNet.</p>
     <p><strong>Do you ship outside South Africa?</strong><br>Yes, we offer worldwide shipping.</p>
     <p><strong>When will I receive my book?</strong><br>Orders will ship at the end of September 2025 once pre-orders close and hard copies are printed.</p>
   </details>
 
   <section class="contact-section">
-    <h2><i class="fas fa-headset icon-blue"></i> Contact Us</h2>
+    <h2><i class="fas fa-headset"></i> Contact Us</h2>
     <p class="contact-intro">We’re here to assist readers, parents, and partners — reach out anytime.</p>
     <ul class="contact-list">
-      <li><i class="fas fa-envelope icon-red"></i> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></li>
-      <li><i class="fab fa-whatsapp icon-green"></i> <a href="https://wa.me/27672656319" target="_blank">+27 67 265 6319</a></li>
-      <li><i class="fas fa-map-marker-alt icon-blue"></i> <a href="https://www.google.com/maps?q=City+of+Matlosana,+South+Africa" target="_blank">City of Matlosana, South Africa</a></li>
+      <li><i class="fas fa-envelope" style="color:#d93025;"></i> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></li>
+      <li><i class="fab fa-whatsapp" style="color:#25D366;"></i> <a href="https://wa.me/27672656319" target="_blank">+27 67 265 6319</a></li>
+      <li><i class="fas fa-map-marker-alt" style="color:#005fa3;"></i> <a href="https://www.google.com/maps?q=City+of+Matlosana,+South+Africa" target="_blank">City of Matlosana, South Africa</a></li>
     </ul>
   </section>
 
   <div class="back-home">
-    <button onclick="window.location.href='index.html'"><i class="fas fa-home" style="color:white;"></i> Back to Home</button>
+    <button onclick="window.location.href='index.html'"><i class="fas fa-home"></i> Back to Home</button>
   </div>
+
+  <!-- Floating Buttons -->
+  <a href="https://wa.me/27672656319" class="floating-btn whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <a href="mailto:lithakoedu@gmail.com" class="floating-btn email-float" title="Send us an Email">
+    <i class="fas fa-envelope"></i>
+  </a>
 
   <footer>
     &copy; 2025 Lithako Edu. All rights reserved.
   </footer>
-
 </body>
 </html>
