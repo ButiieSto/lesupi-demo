@@ -225,15 +225,39 @@
       transform: scale(1.05);
     }
 
-    /* Footer */
-    footer {
-      background: #000;
+    /* Floating WhatsApp Button (Mobile Only) */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
       color: white;
+      border-radius: 50%;
       text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
+      font-size: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      transition: all 0.3s ease;
     }
 
+    .whatsapp-float i {
+      margin-top: 15px;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #1ebe5d;
+    }
+
+    @media (min-width: 900px) {
+      .whatsapp-float {
+        display: none;
+      }
+    }
+
+    /* Responsive */
     @media (max-width: 700px) {
       nav a { font-size: 0.95rem; }
       section { padding: 1rem; }
@@ -262,10 +286,17 @@
       <p><strong>Subjects:</strong> All Subjects</p>
       <p><strong>Rate:</strong> Only R190 per hour</p>
       <p><strong>Mode:</strong> You decide — Onsite or Online</p>
-      <p><strong>Contact Us:</strong></p>
+
+      <h3 style="color:#005fa3; margin-top:1.5rem;"><i class="fas fa-bolt"></i> Quick Contact</h3>
       <ul>
-        <li><i class="fab fa-whatsapp" style="color: #25D366;"></i> 067 265 6319</li>
-        <li><i class="fas fa-envelope" style="color: #d93025;"></i> <a href="mailto:info@lithakoeduandsports.co.za">info@lithakoeduandsports.co.za</a></li>
+        <li>
+          <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+          <a href="https://wa.me/27672656319" target="_blank">+27 67 265 6319</a>
+        </li>
+        <li>
+          <i class="fas fa-envelope" style="color: #d93025;"></i>
+          <a href="mailto:info@lithakoeduandsports.co.za">info@lithakoeduandsports.co.za</a>
+        </li>
       </ul>
     </div>
 
@@ -294,6 +325,11 @@
   <div class="back-home">
     <button onclick="window.location.href='index.html'"><i class="fas fa-home" style="color:white;"></i> Back to Home</button>
   </div>
+
+  <!-- WhatsApp Floating Button (Mobile Only) -->
+  <a href="https://wa.me/27672656319" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   <footer>
     &copy; 2025 Lithako Edu. All rights reserved.
