@@ -38,7 +38,6 @@
     }
 
     header p {
-      font-family: 'Poppins', sans-serif;
       font-size: 1.1rem;
       margin-top: 0.5rem;
       color: #add8e6;
@@ -176,16 +175,14 @@
     }
 
     .accordion-content {
-      overflow: hidden;
-      max-height: 1000px;
       padding: 1rem 1.5rem;
       opacity: 1;
-      transition: all 0.4s ease;
+      max-height: none; /* Full visibility fix */
+      transition: opacity 0.3s ease;
     }
 
     .accordion.closed .accordion-content {
-      max-height: 0;
-      padding: 0 1.5rem;
+      display: none;
       opacity: 0;
     }
 
@@ -353,14 +350,21 @@
   <div class="accordion open">
     <div class="accordion-header"><span><i class="fas fa-user-tie"></i> About the Author</span><i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
-      <p><strong>Ranneile Lesupi</strong>, Sports Coach & Business Visionary. A storyteller at heart...</p>
+      <p><strong>Ranneile Lesupi</strong>, Sports Coach & Business Visionary. A storyteller at heart.</p>
+      <p>Ranneile Lesupi is a dynamic entrepreneur, creative force, and author whose ventures span across industry and imagination.</p>
+      <p>As the creative lifeblood behind <strong>Ranneile Projects</strong>, he leads innovative initiatives that defy convention.</p>
+      <p>Through <strong>Lithako Edu & Sports</strong>, he mentors children aged 5–15 — nurturing tomorrow’s champions.</p>
+      <p>His ventures include <strong>Maqhubu Hospitality</strong>, <strong>Lelomotech</strong>, and <strong>RuntaFit Apparel</strong>, all operating under <strong>House of Nneile</strong>, where he serves as COO.</p>
+      <p>On page and screen, Ranneile brings stories to life — bold, real, and unapologetic — speaking to his community and beyond.</p>
     </div>
   </div>
 
   <div class="accordion open">
     <div class="accordion-header"><span><i class="fas fa-truck"></i> Shipping FAQs</span><i class="fas fa-chevron-down"></i></div>
     <div class="accordion-content">
-      <p><strong>Is delivery included in the price?</strong><br>No, delivery is charged separately...</p>
+      <p><strong>Is delivery included in the price?</strong><br>No, delivery is charged separately. You can choose between Pep Paxi, Pudo, or PostNet.</p>
+      <p><strong>Do you ship outside South Africa?</strong><br>Yes, we offer worldwide shipping.</p>
+      <p><strong>When will I receive my book?</strong><br>Orders will ship at the end of September 2025 once pre-orders close and hard copies are printed.</p>
     </div>
   </div>
 
@@ -399,7 +403,6 @@
     accordions.forEach(acc => {
       const header = acc.querySelector('.accordion-header');
       header.addEventListener('click', () => {
-        acc.classList.toggle('open');
         acc.classList.toggle('closed');
       });
     });
