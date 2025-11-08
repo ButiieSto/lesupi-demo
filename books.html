@@ -34,7 +34,6 @@
     }
 
     header p {
-      font-family: 'Poppins', sans-serif;
       font-size: 1.1rem;
       margin-top: 0.5rem;
       color: #add8e6;
@@ -60,13 +59,9 @@
       transition: color 0.3s ease;
     }
 
-    nav a i {
-      color: white;
-    }
+    nav a i { color: white; }
 
-    nav a:hover {
-      color: #aee0ff;
-    }
+    nav a:hover { color: #aee0ff; }
 
     /* Hero */
     .hero {
@@ -116,17 +111,23 @@
       font-weight: 600;
     }
 
-    /* Collapsible Sections */
-    details {
+    /* Accordion Sections */
+    .accordion {
       max-width: 900px;
       margin: 1.5rem auto;
-      border-radius: 8px;
-      overflow: hidden;
+    }
+
+    .accordion-item {
       background: #fff;
+      border-left: 4px solid #0077cc;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
       transition: all 0.3s ease;
     }
 
-    summary {
+    .accordion-header {
       background: #005fa3;
       color: white;
       padding: 1rem 1.2rem;
@@ -134,29 +135,32 @@
       font-weight: 600;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
+      justify-content: space-between;
       font-size: 1.1rem;
       user-select: none;
       transition: background 0.3s ease;
     }
 
-    summary:hover {
-      background: #00487d;
+    .accordion-header:hover { background: #00487d; }
+
+    .accordion-header i {
+      transition: transform 0.3s ease;
     }
 
-    details[open] summary {
-      border-bottom: 2px solid #0077cc;
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 1.2rem;
     }
 
-    details p {
-      padding: 1rem 1.5rem;
-      font-size: 1rem;
+    .accordion-item.active .accordion-content {
+      max-height: 600px;
+      padding: 1.2rem;
     }
 
-    details[open] {
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      border-left: 4px solid #0077cc;
+    .accordion-item.active .accordion-header i {
+      transform: rotate(180deg);
     }
 
     /* Contact Section */
@@ -181,37 +185,7 @@
       color: #005fa3;
     }
 
-    .contact-intro {
-      color: #333;
-      font-style: italic;
-      margin-bottom: 1rem;
-    }
-
-    .contact-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .contact-list li {
-      margin: 0.5rem 0;
-      font-size: 1rem;
-    }
-
-    .contact-list i {
-      margin-right: 8px;
-    }
-
-    .contact-list a {
-      color: #005fa3;
-      text-decoration: none;
-    }
-
-    .contact-list a:hover {
-      text-decoration: underline;
-    }
-
-    /* Back to Home Button */
+    /* Back to Home */
     .back-home {
       text-align: center;
       margin: 2rem 0;
@@ -239,42 +213,6 @@
       transform: scale(1.05);
     }
 
-    /* Floating Buttons */
-    .floating-btn {
-      position: fixed;
-      width: 55px;
-      height: 55px;
-      bottom: 20px;
-      right: 20px;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 26px;
-      color: white;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    .floating-btn i {
-      margin-top: 14px;
-    }
-
-    .floating-btn:hover {
-      transform: scale(1.1);
-    }
-
-    .whatsapp-float {
-      background-color: #25D366;
-      bottom: 20px;
-      right: 20px;
-    }
-
-    .email-float {
-      background-color: #0077cc;
-      bottom: 90px;
-      right: 20px;
-    }
-
     footer {
       background: #000;
       color: white;
@@ -283,10 +221,7 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 700px) {
-      nav a { font-size: 0.95rem; }
-      details p { padding: 1rem; }
-    }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
@@ -304,41 +239,68 @@
 
   <section class="hero">
     <img src="tlh-cover.jpg" alt="The Loony Hypochondriacs Book Cover">
-    <button class="cta-button pulse"><i class="fas fa-shopping-cart"></i> Order Now</button>
+    <button class="cta-button pulse" onclick="document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' })">
+      <i class="fas fa-shopping-cart"></i> Order Now
+    </button>
     <p class="highlight">🔥 Limited stock — secure your copy today!</p>
   </section>
 
-  <details open>
-    <summary><i class="fas fa-book-open"></i> About the Book</summary>
-    <p>Welcome to <strong>Hypercondria™</strong> — a flawless, medically optimized town where not having a disorder is the ultimate red flag.</p>
-    <p>Here, wellness is currency, therapy is mandatory, and your daily dose of medication isn't just encouraged — it's celebrated.</p>
-    <p>Enter Hloux, a quiet skeptic with a suspiciously clean medical record. When a chance encounter with a rebellious soul named Noni exposes him to the glitch beneath the system's polished smile, Hloux begins to see the truth.</p>
-    <p>Together they descend into the pharmaceutical funhouse, dodging Side-Effect Evangelists, Dopamine Influencers, and pill-pushing prophets. Beneath the synthetic joy and curated neuroses, something unmedicated is waking up... and it's not approved by the Council of Diagnostics™.</p>
-  </details>
+  <div class="accordion">
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <span><i class="fas fa-book-open"></i> About the Book</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="accordion-content">
+        <p>Welcome to <strong>Hypercondria™</strong> — a flawless, medically optimized town where not having a disorder is the ultimate red flag.</p>
+        <p>Here, wellness is currency, therapy is mandatory, and your daily dose of medication isn't just encouraged — it's celebrated.</p>
+        <p>Enter Hloux, a quiet skeptic with a suspiciously clean medical record. When a chance encounter with a rebellious soul named Noni exposes him to the glitch beneath the system's polished smile, Hloux begins to see the truth.</p>
+        <p>Together they descend into the pharmaceutical funhouse, dodging Side-Effect Evangelists, Dopamine Influencers, and pill-pushing prophets. Beneath the synthetic joy and curated neuroses, something unmedicated is waking up... and it's not approved by the Council of Diagnostics™.</p>
+        <button class="cta-button pulse" onclick="document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' })">
+          <i class="fas fa-shopping-cart"></i> Order Now
+        </button>
+      </div>
+    </div>
 
-  <details open>
-    <summary><i class="fas fa-user-tie"></i> About the Author</summary>
-    <p><strong>Ranneile Lesupi</strong> — a passionate storyteller and sports mentor who fuses creativity and discipline. Through his work at <strong>Lithako Edu & Sports</strong>, he inspires young people to chase both intellectual and athletic excellence, while his writing captures the humor and humanity of modern life.</p>
-  </details>
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <span><i class="fas fa-user-tie"></i> About the Author</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="accordion-content">
+        <p><strong>Ranneile Lesupi</strong> — a passionate storyteller and sports mentor who fuses creativity and discipline. Through his work at <strong>Lithako Edu & Sports</strong>, he inspires young people to chase both intellectual and athletic excellence, while his writing captures the humor and humanity of modern life.</p>
+      </div>
+    </div>
 
-  <details open>
-    <summary><i class="fas fa-credit-card"></i> How to Order</summary>
-    <p><strong>Price:</strong> R369 (excluding delivery)</p>
-    <p><strong>Payment Method:</strong> EFT Only</p>
-    <p><strong>Bank:</strong> Capitec Business<br>
-       <strong>Account Name:</strong> Lithako Edu and Sports<br>
-       <strong>Account Number:</strong> 1051 3359 06</p>
-    <p><strong>Reference:</strong> Your Full Name + <code>#TLH</code></p>
-    <p>Send proof of payment to: <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></p>
-    <p>💳 Safe & simple EFT payment with proof verification.<br>📦 Delivery available nationwide.</p>
-  </details>
+    <div id="order-section" class="accordion-item">
+      <div class="accordion-header">
+        <span><i class="fas fa-credit-card"></i> How to Order</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="accordion-content">
+        <p><strong>Price:</strong> R369 (excluding delivery)</p>
+        <p><strong>Payment Method:</strong> EFT Only</p>
+        <p><strong>Bank:</strong> Capitec Business<br>
+           <strong>Account Name:</strong> Lithako Edu and Sports<br>
+           <strong>Account Number:</strong> 1051 3359 06</p>
+        <p><strong>Reference:</strong> Your Full Name + <code>#TLH</code></p>
+        <p>Send proof of payment to: <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></p>
+        <p>💳 Safe & simple EFT payment with proof verification.<br>📦 Delivery available nationwide.</p>
+      </div>
+    </div>
 
-  <details open>
-    <summary><i class="fas fa-truck"></i> Shipping FAQs</summary>
-    <p><strong>Is delivery included in the price?</strong><br>No, delivery is charged separately. You can choose between Pep Paxi, Pudo, or PostNet.</p>
-    <p><strong>Do you ship outside South Africa?</strong><br>Yes, we offer worldwide shipping.</p>
-    <p><strong>When will I receive my book?</strong><br>Orders will ship at the end of September 2025 once pre-orders close and hard copies are printed.</p>
-  </details>
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <span><i class="fas fa-truck"></i> Shipping FAQs</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="accordion-content">
+        <p><strong>Is delivery included in the price?</strong><br>No, delivery is charged separately. You can choose between Pep Paxi, Pudo, or PostNet.</p>
+        <p><strong>Do you ship outside South Africa?</strong><br>Yes, we offer worldwide shipping.</p>
+        <p><strong>When will I receive my book?</strong><br>Orders will ship at the end of September 2025 once pre-orders close and hard copies are printed.</p>
+      </div>
+    </div>
+  </div>
 
   <section class="contact-section">
     <h2><i class="fas fa-headset"></i> Contact Us</h2>
@@ -354,17 +316,19 @@
     <button onclick="window.location.href='index.html'"><i class="fas fa-home"></i> Back to Home</button>
   </div>
 
-  <!-- Floating Buttons -->
-  <a href="https://wa.me/27672656319" class="floating-btn whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <a href="mailto:lithakoedu@gmail.com" class="floating-btn email-float" title="Send us an Email">
-    <i class="fas fa-envelope"></i>
-  </a>
-
   <footer>
     &copy; 2025 Lithako Edu. All rights reserved.
   </footer>
+
+  <script>
+    // Accordion toggle
+    const accordions = document.querySelectorAll('.accordion-item');
+    accordions.forEach(item => {
+      const header = item.querySelector('.accordion-header');
+      header.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 </html>
