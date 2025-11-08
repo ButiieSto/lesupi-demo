@@ -41,8 +41,6 @@
     header img {
       width: 140px;
       height: auto;
-      border: 3px solid #aee0ff;
-      border-radius: 8px;
     }
 
     /* Navbar */
@@ -70,7 +68,9 @@
       text-align: center;
       padding: 2.5rem 1.5rem;
       background: linear-gradient(135deg, #f7faff, #fff8e1);
+      border-left: 4px solid #0077cc;
       border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       margin: 2rem auto;
       max-width: 900px;
     }
@@ -133,9 +133,11 @@
       background: #00487d;
     }
 
-    .buttons-section button:hover i {
-      color: #ffd700;
-    }
+    /* Colored Icons */
+    .icon-blue { color: #005fa3; }
+    .icon-gold { color: #d4af37; }
+    .icon-red { color: #d93025; }
+    .icon-green { color: #25D366; }
 
     /* About Section */
     .about-section {
@@ -153,6 +155,10 @@
       font-size: 2rem;
       font-weight: bold;
       margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
     }
 
     /* Contact Section */
@@ -165,11 +171,16 @@
       padding: 1.5rem;
       text-align: center;
       color: #000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     .contact-section h2 {
       font-size: 2rem;
       margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
     }
 
     .contact-intro {
@@ -190,7 +201,6 @@
     }
 
     .contact-list i {
-      color: #005fa3;
       margin-right: 8px;
     }
 
@@ -293,22 +303,22 @@
   </section>
 
   <section class="buttons-section">
-    <button onclick="window.location.href='books.html'"><i class="fas fa-book"></i> Explore Our Books</button>
-    <button onclick="window.location.href='tutoring.html'"><i class="fas fa-graduation-cap"></i> Join Our Tutoring</button>
+    <button onclick="window.location.href='books.html'"><i class="fas fa-book icon-blue"></i> Explore Our Books</button>
+    <button onclick="window.location.href='tutoring.html'"><i class="fas fa-graduation-cap icon-gold"></i> Join Our Tutoring</button>
   </section>
 
   <section class="about-section">
-    <h2>About Ranneile Lesupi</h2>
-    <p><strong>Ranneile Lesupi</strong> - Sports Coach & Business Visionary. A storyteller at heart. Through <strong>Lithako Edu & Sports</strong>, he mentors and develops young learners and athletes aged 5-15, guiding them to become confident scholars and disciplined champions.</p>
+    <h2><i class="fas fa-user-tie icon-gold"></i> About Ranneile Lesupi</h2>
+    <p><strong>Ranneile Lesupi</strong> - Sports Coach & Business Visionary. A storyteller at heart. Through <strong>Lithako Edu & Sports</strong>, he mentors and develops young learners and athletes aged 5–15, guiding them to become confident scholars and disciplined champions.</p>
   </section>
 
   <section class="contact-section">
-    <h2>Contact Us</h2>
+    <h2><i class="fas fa-headset icon-blue"></i> Contact Us</h2>
     <p class="contact-intro">We’re here to assist parents, learners, and partners — reach out anytime.</p>
     <ul class="contact-list">
-      <li><i class="fas fa-envelope"></i> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></li>
-      <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/27672656319" target="_blank">+27 67 265 6319</a></li>
-      <li><i class="fas fa-map-marker-alt"></i> City of Matlosana, South Africa</li>
+      <li><i class="fas fa-envelope icon-red"></i> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></li>
+      <li><i class="fab fa-whatsapp icon-green"></i> <a href="https://wa.me/27672656319" target="_blank">+27 67 265 6319</a></li>
+      <li><i class="fas fa-map-marker-alt icon-blue"></i> City of Matlosana, South Africa</li>
     </ul>
   </section>
 
