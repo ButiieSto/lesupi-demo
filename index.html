@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lithako Edu & Sports</title>
+  <title>Lithako Edu – The Loony Hypochondriacs</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -18,147 +18,154 @@
       line-height: 1.6;
     }
 
-    /* === Header === */
+    /* Header */
     header {
-      width: 100%;
-      background-color: #000;
+      background: #000;
       color: #add8e6;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      box-sizing: border-box;
+      text-align: center;
+      padding: 2rem 1rem;
     }
 
     header h1 {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin: 0;
-      line-height: 1.1;
       letter-spacing: 2px;
     }
 
-    header img {
-      width: 140px;
-      height: auto;
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      color: #add8e6;
     }
 
-    /* Navbar */
+    /* === Updated Navbar === */
     nav {
       background: #005fa3;
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      align-items: center;
+      gap: 2.5rem;
       padding: 1rem 0;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
     nav a {
-      color: white;
+      color: #ffffff;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
+      font-weight: 600;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    nav a i {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease, color 0.3s ease;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #aee0ff;
+      transform: scale(1.05);
     }
 
-    /* Welcome Section */
-    .welcome-section {
+    nav a:hover i {
+      transform: translateY(-2px);
+      color: #ffffff;
+    }
+
+    /* Hero */
+    .hero {
       text-align: center;
-      padding: 2.5rem 1.5rem;
-      background: linear-gradient(135deg, #f7faff, #fff8e1);
-      border-left: 4px solid #0077cc;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      margin: 2rem auto;
-      max-width: 900px;
+      padding: 2rem 1rem;
     }
 
-    .welcome-section h1 {
-      font-size: 2.5rem;
-      margin: 0.5rem 0;
-      font-weight: bold;
+    .hero img {
+      max-width: 300px;
+      width: 80%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
-    .welcome-section h2.slogan {
-      font-size: 1.5rem;
-      margin: 0.5rem 0 1rem 0;
-      font-weight: bold;
-      color: #005fa3;
-    }
-
-    .welcome-section p {
-      max-width: 800px;
-      margin: 0.75rem auto;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    .highlight {
-      font-weight: bold;
-      color: #005fa3;
-    }
-
-    /* Buttons */
-    .buttons-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      margin: 2rem 0;
-    }
-
-    .buttons-section button {
+    .cta-button {
       background: #005fa3;
       color: white;
       border: none;
-      padding: 0.75rem 1.8rem;
+      padding: 0.8rem 1.5rem;
       font-size: 1rem;
       border-radius: 6px;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 0.6rem;
-      transition: transform 0.2s, background 0.3s;
+      gap: 0.5rem;
+      margin: 1rem auto;
+      transition: all 0.3s ease;
     }
 
-    .buttons-section button i {
-      font-size: 1.3rem;
-      transition: color 0.3s;
-    }
-
-    .buttons-section button:hover {
-      transform: scale(1.05);
+    .cta-button:hover {
       background: #00487d;
+      transform: scale(1.05);
     }
 
-    /* Colored Icons */
-    .icon-blue { color: #005fa3; }
-    .icon-gold { color: #d4af37; }
-    .icon-red { color: #d93025; }
-    .icon-green { color: #25D366; }
-
-    /* About Section */
-    .about-section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background: #ffffff;
-      border-left: 4px solid #0077cc;
-      border-radius: 6px;
-      color: #000;
+    .pulse {
+      animation: pulse 1.8s infinite;
     }
 
-    .about-section h2 {
-      margin-top: 0;
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .highlight {
+      color: #005fa3;
+      font-weight: 600;
+    }
+
+    /* Collapsible Sections */
+    details {
+      max-width: 900px;
+      margin: 1.5rem auto;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+
+    summary {
+      background: #005fa3;
+      color: white;
+      padding: 1rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
+      font-size: 1.1rem;
+      user-select: none;
+      transition: background 0.3s ease;
+    }
+
+    summary:hover {
+      background: #00487d;
+    }
+
+    details[open] summary {
+      border-bottom: 2px solid #0077cc;
+    }
+
+    details p {
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+    }
+
+    details[open] {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      border-left: 4px solid #0077cc;
     }
 
     /* Contact Section */
@@ -175,12 +182,12 @@
     }
 
     .contact-section h2 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
+      font-size: 2rem;
+      color: #005fa3;
     }
 
     .contact-intro {
@@ -213,35 +220,34 @@
       text-decoration: underline;
     }
 
-    /* Sponsors Section */
-    .sponsors {
+    /* Back to Home Button */
+    .back-home {
       text-align: center;
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 1.5rem;
+      margin: 2rem 0;
     }
 
-    .sponsors h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .sponsor-logos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1.5rem;
-      justify-items: center;
-      align-items: center;
-    }
-
-    .sponsor-logos img {
-      max-height: 100px;
-      width: auto;
+    .back-home button {
+      background: #005fa3;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
       border-radius: 8px;
-      object-fit: contain;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 0 auto;
+      transition: all 0.3s ease;
     }
 
-    /* Footer */
+    .back-home button:hover {
+      background: #00487d;
+      transform: scale(1.05);
+    }
+
     footer {
       background: #000;
       color: white;
@@ -250,33 +256,9 @@
       font-size: 0.9rem;
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      header img {
-        margin-top: 1rem;
-      }
-
-      header h1 {
-        font-size: 2.2rem;
-      }
-
-      .welcome-section h1 {
-        font-size: 2rem;
-      }
-
-      .welcome-section h2.slogan {
-        font-size: 1.2rem;
-      }
-
-      .buttons-section button {
-        width: 80%;
-        justify-content: center;
-      }
+    @media (max-width: 700px) {
+      nav a { font-size: 0.95rem; }
+      details p { padding: 1rem; }
     }
   </style>
 </head>
@@ -284,58 +266,72 @@
 <body>
 
   <header>
-    <h1>LITHAKO<br>EDU & SPORTS</h1>
-    <img src="lithako-sports-logo-reg.jpg" alt="Lithako Edu & Sports Registered Logo">
+    <h1>Lithako Edu</h1>
+    <p>Order <em>The Loony Hypochondriacs</em> Today</p>
   </header>
 
+  <!-- ✅ Updated Navbar -->
   <nav>
-    <a href="books.html">Books</a>
-    <a href="tutoring.html">Tutoring</a>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="books.html"><i class="fas fa-book"></i> Books</a>
+    <a href="tutoring.html"><i class="fas fa-graduation-cap"></i> Tutoring</a>
   </nav>
 
-  <section class="welcome-section">
-    <h1>Welcome to:</h1>
-    <h1>Lithako Edu & Sports</h1>
-    <h2 class="slogan">Empowering our young minds through education & sports.</h2>
-    <p>Our structured training programs are tailored for learners aged 5 to 15, combining academic support with high-performance sports development across Football, Basketball, Netball, Athletics, and more.</p>
-    <p>With qualified coaches, safe facilities, and results-driven programs, we empower every child to reach their full potential, academically, physically, and mentally. We’re here to nurture their confidence, teach teamwork, and show them that dedication pays off both in the classroom and on the field.</p>
-    <p>Through our balanced approach to education and sport, children learn discipline, respect, and resilience, which are values that will carry them far beyond the now. <span class="highlight">Developing complete athletes, because every child deserves a chance.</span></p>
+  <section class="hero">
+    <img src="tlh-cover.jpg" alt="The Loony Hypochondriacs Book Cover">
+    <button class="cta-button pulse"><i class="fas fa-shopping-cart"></i> Order Now</button>
+    <p class="highlight">🔥 Limited stock — secure your copy today!</p>
   </section>
 
-  <section class="buttons-section">
-    <button onclick="window.location.href='books.html'"><i class="fas fa-book" style="color: #ffffff;"></i> Explore Our Books</button>
-    <button onclick="window.location.href='tutoring.html'"><i class="fas fa-graduation-cap icon-gold"></i> Join Our Tutoring</button>
-  </section>
+  <details open>
+    <summary><i class="fas fa-book-open"></i> About the Book</summary>
+    <p>Welcome to <strong>Hypercondria™</strong> — a flawless, medically optimized town where not having a disorder is the ultimate red flag.</p>
+    <p>Here, wellness is currency, therapy is mandatory, and your daily dose of medication isn't just encouraged — it's celebrated.</p>
+    <p>Enter Hloux, a quiet skeptic with a suspiciously clean medical record. When a chance encounter with a rebellious soul named Noni exposes him to the glitch beneath the system's polished smile, Hloux begins to see the truth.</p>
+    <p>Together they descend into the pharmaceutical funhouse, dodging Side-Effect Evangelists, Dopamine Influencers, and pill-pushing prophets. Beneath the synthetic joy and curated neuroses, something unmedicated is waking up... and it's not approved by the Council of Diagnostics™.</p>
+  </details>
 
-  <section class="about-section">
-    <h2><i class="fas fa-user-tie icon-gold"></i> About Ranneile Lesupi</h2>
-    <p><strong>Ranneile Lesupi</strong> - Sports Coach & Business Visionary. A storyteller at heart. Through <strong>Lithako Edu & Sports</strong>, he mentors and develops young learners and athletes aged 5–15, guiding them to become confident scholars and disciplined champions.</p>
-  </section>
+  <details open>
+    <summary><i class="fas fa-user-tie"></i> About the Author</summary>
+    <p><strong>Ranneile Lesupi</strong> — a passionate storyteller and sports mentor who fuses creativity and discipline. Through his work at <strong>Lithako Edu & Sports</strong>, he inspires young people to chase both intellectual and athletic excellence, while his writing captures the humor and humanity of modern life.</p>
+  </details>
+
+  <details open>
+    <summary><i class="fas fa-credit-card"></i> How to Order</summary>
+    <p><strong>Price:</strong> R369 (excluding delivery)</p>
+    <p><strong>Payment Method:</strong> EFT Only</p>
+    <p><strong>Bank:</strong> Capitec Business<br>
+       <strong>Account Name:</strong> Lithako Edu and Sports<br>
+       <strong>Account Number:</strong> 1051 3359 06</p>
+    <p><strong>Reference:</strong> Your Full Name + <code>#TLH</code></p>
+    <p>Send proof of payment to: <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></p>
+    <p>💳 Safe & simple EFT payment with proof verification.<br>📦 Delivery available nationwide.</p>
+  </details>
+
+  <details open>
+    <summary><i class="fas fa-truck"></i> Shipping FAQs</summary>
+    <p><strong>Is delivery included in the price?</strong><br>No, delivery is charged separately. You can choose between Pep Paxi, Pudo, or PostNet.</p>
+    <p><strong>Do you ship outside South Africa?</strong><br>Yes, we offer worldwide shipping.</p>
+    <p><strong>When will I receive my book?</strong><br>Orders will ship at the end of September 2025 once pre-orders close and hard copies are printed.</p>
+  </details>
 
   <section class="contact-section">
-    <h2><i class="fas fa-headset icon-blue"></i> Contact Us</h2>
-    <p class="contact-intro">We’re here to assist parents, learners, and partners — reach out anytime.</p>
+    <h2><i class="fas fa-headset"></i> Contact Us</h2>
+    <p class="contact-intro">We’re here to assist readers, parents, and partners — reach out anytime.</p>
     <ul class="contact-list">
-      <li><i class="fas fa-envelope icon-red"></i> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></li>
-      <li><i class="fab fa-whatsapp icon-green"></i> <a href="https://wa.me/27672656319" target="_blank">+27 67 265 6319</a></li>
-      <li><i class="fas fa-map-marker-alt icon-blue"></i> City of Matlosana, South Africa</li>
+      <li><i class="fas fa-envelope" style="color:#d93025;"></i> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></li>
+      <li><i class="fab fa-whatsapp" style="color:#25D366;"></i> <a href="https://wa.me/27672656319" target="_blank">+27 67 265 6319</a></li>
+      <li><i class="fas fa-map-marker-alt" style="color:#005fa3;"></i> <a href="https://www.google.com/maps?q=City+of+Matlosana,+South+Africa" target="_blank">City of Matlosana, South Africa</a></li>
     </ul>
   </section>
 
-  <section class="sponsors">
-    <h2>Our Proud Sponsors</h2>
-    <div class="sponsor-logos">
-      <img src="images/sponsors/sponsor1.jpg" alt="Sponsor 1">
-      <img src="images/sponsors/sponsor2.jpg" alt="Sponsor 2">
-      <img src="images/sponsors/sponsor3.jpg" alt="Sponsor 3">
-      <img src="images/sponsors/sponsor4.jpg" alt="Sponsor 4">
-      <img src="images/sponsors/sponsor5.jpg" alt="Sponsor 5">
-      <img src="images/sponsors/sponsor6.jpg" alt="Sponsor 6">
-    </div>
-  </section>
+  <div class="back-home">
+    <button onclick="window.location.href='index.html'"><i class="fas fa-home"></i> Back to Home</button>
+  </div>
 
   <footer>
     &copy; 2025 Lithako Edu. All rights reserved.
   </footer>
+
 </body>
 </html>
