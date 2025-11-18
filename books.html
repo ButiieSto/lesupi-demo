@@ -110,6 +110,12 @@
       100% { transform: scale(1); }
     }
 
+    .highlight {
+      color: #005fa3;
+      font-weight: 600;
+    }
+
+    /* Box Sections */
     .info-box {
       max-width: 900px;
       margin: 2rem auto;
@@ -188,6 +194,39 @@
       font-style: italic;
     }
 
+    /* Contact Section */
+    .contact-section {
+      max-width: 800px;
+      margin: 3rem auto;
+      background: #ffffff;
+      border-left: 4px solid #0077cc;
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      color: #000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .contact-section h2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 2rem;
+      color: #005fa3;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .contact-list li {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+
     /* Floating Buttons */
     .floating-btn {
       position: fixed;
@@ -199,6 +238,18 @@
       color: white;
       z-index: 1000;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, background 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .floating-btn i {
+      margin: 0;
+    }
+
+    .floating-btn:hover {
+      transform: scale(1.07);
     }
 
     .whatsapp-float {
@@ -213,12 +264,46 @@
       right: 20px;
     }
 
+    /* Back to Home */
+    .back-home {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .back-home .back-cta {
+      background: #005fa3;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .back-home .back-cta:hover {
+      background: #00487d;
+      transform: scale(1.05);
+    }
+
     footer {
       background: #000;
       color: white;
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
+    }
+
+    @media (max-width: 700px) {
+      .hero img { max-width: 220px; }
+      .info-box, .accordion, .thank-you, .contact-section { margin: 1rem; padding: 1rem; }
+      .email-float { right: 14px; bottom: 84px; }
+      .whatsapp-float { right: 14px; bottom: 20px; }
     }
   </style>
 </head>
@@ -237,21 +322,26 @@
 
   <section class="hero">
     <img src="tlh-cover.jpg" alt="The Loony Hypochondriacs Book Cover">
-    <button class="cta-button pulse" onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">
-      <i class="fas fa-shopping-cart"></i> Order Now
+    <button class="cta-button pulse" onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });" aria-label="Order Now">
+      <i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now
     </button>
   </section>
 
   <section class="info-box">
     <h2><i class="fas fa-book-open"></i> About the Book</h2>
+
     <p>Welcome to <strong>Hypercondria™</strong> — a flawless, medically optimized town where not having a disorder is the ultimate red flag.</p>
-    <p>Here, wellness is currency, therapy is mandatory, and your daily dose of medication isn't just encouraged — it's celebrated.</p>
-    <p>Enter Hloux, a quiet skeptic with a suspiciously clean medical record...</p>
+
+    <p>Here, wellness is currency, therapy is mandatory, and your daily dose of medication isn't just encouraged — it's celebrated. From Diagnosipops™ to Sadness Management Seminars, everyone's a proud patient. Feeling fine? You're clearly in denial.</p>
+
+    <p>Enter Hloux, a quiet skeptic with a suspiciously clean medical record. When a chance encounter with a rebellious soul named Noni exposes him to the glitch beneath the system's polished smile, Hloux begins to see the truth: They don't need to drug you — just convince you to medicate yourself.</p>
+
+    <p>Together they descend into the pharmaceutical funhouse, dodging Side-Effect Evangelists, Dopamine Influencers, and pill-pushing prophets. Beneath the synthetic joy and curated neuroses, something unmedicated is waking up... and it's not approved by the Council of Diagnostics™.</p>
   </section>
 
   <div style="text-align:center;">
-    <button class="cta-button pulse" onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">
-      <i class="fas fa-shopping-cart"></i> Order Now
+    <button class="cta-button pulse" onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });" aria-label="Order Now (second)">
+      <i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Now
     </button>
   </div>
 
@@ -268,34 +358,35 @@
   </section>
 
   <!-- What Readers Are Saying -->
-  <div class="accordion open">
+  <div class="accordion open" aria-expanded="true">
     <div class="accordion-header">
-      <span><i class="fas fa-comment-dots"></i> What Readers Are Saying</span>
-      <i class="fas fa-chevron-down"></i>
+      <span><i class="fas fa-comment-dots" aria-hidden="true"></i> What Readers Are Saying</span>
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
     </div>
     <div class="accordion-content">
       <p><em>"I loved it, as it was very quirky, funny and thought-provoking."</em></p>
-      <p><em>"A brilliantly satirical romp…" </em></p>
+      <p><em>"A brilliantly satirical romp through the neuroses of a truly unforgettable character. Each page had me laughing out loud, sometimes in disbelief, often in recognition. If you enjoy satire with a touch of madness, this is the perfect read."</em></p>
+      <p><em>"I finally got to read it. It was refreshing, well paced and certainly a very welcome distraction from academic literature."</em></p>
     </div>
   </div>
 
   <!-- Updated About the Author -->
-  <div class="accordion open">
+  <div class="accordion open" aria-expanded="true">
     <div class="accordion-header">
-      <span><i class="fas fa-user-tie"></i> About the Author</span>
-      <i class="fas fa-chevron-down"></i>
+      <span><i class="fas fa-user-tie" aria-hidden="true"></i> About the Author</span>
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
     </div>
     <div class="accordion-content">
       <p><strong>Ranneile Lesupi</strong>, Sports Coach & Business Visionary. A storyteller at heart.</p>
-      <p><strong>Ranneile Lesupi</strong> is a dynamic entrepreneur, creative force, and author whose ventures span across industry and imagination.</p>
+      <p>Ranneile Lesupi is a dynamic entrepreneur, creative force, and author whose ventures span across industry and imagination.</p>
       <p>Both on page and on screen, Ranneile brings stories which are bold, real and unapologetic to life, speaking to both his community and beyond.</p>
     </div>
   </div>
 
-  <div class="accordion open">
+  <div class="accordion open" aria-expanded="true">
     <div class="accordion-header">
-      <span><i class="fas fa-truck"></i> Shipping FAQs</span>
-      <i class="fas fa-chevron-down"></i>
+      <span><i class="fas fa-truck" aria-hidden="true"></i> Shipping FAQs</span>
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
     </div>
     <div class="accordion-content">
       <p><strong>Is delivery included?</strong> No. Options: Paxi, Pudo, or PostNet.</p>
@@ -308,17 +399,28 @@
     Thank you for your interest in <em>The Loony Hypochondriacs</em>. Your support helps bring bold, fresh stories to life. We can't wait to deliver your copy soon!
   </div>
 
+  <section class="contact-section">
+    <h2><i class="fas fa-headset"></i> Contact Us</h2>
+    <ul class="contact-list">
+      <li><i class="fas fa-envelope" style="color:#d93025;"></i> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></li>
+      <li><i class="fab fa-whatsapp" style="color:#25D366;"></i> <a href="https://wa.me/27672656319" target="_blank" rel="noopener">+27 67 265 6319</a></li>
+      <li><i class="fas fa-map-marker-alt" style="color:#005fa3;"></i> <a href="https://www.google.com/maps?q=City+of+Matlosana,+South+Africa" target="_blank" rel="noopener">City of Matlosana, South Africa</a></li>
+    </ul>
+  </section>
+
   <!-- Floating Buttons -->
-  <a href="https://wa.me/27672656319" class="floating-btn whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
+  <a href="https://wa.me/27672656319" class="floating-btn whatsapp-float" target="_blank" rel="noopener" title="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
   </a>
 
-  <a href="mailto:lithakoedu@gmail.com" class="floating-btn email-float">
-    <i class="fas fa-envelope"></i>
+  <a href="mailto:lithakoedu@gmail.com" class="floating-btn email-float" title="Send us an email">
+    <i class="fas fa-envelope" aria-hidden="true"></i>
   </a>
 
   <div class="back-home">
-    <button onclick="window.location.href='index.html'"><i class="fas fa-home"></i> Back to Home</button>
+    <button class="back-cta" type="button" onclick="window.location.href='index.html'" aria-label="Back to Home">
+      <i class="fas fa-home" aria-hidden="true"></i> Back to Home
+    </button>
   </div>
 
   <footer>
@@ -326,11 +428,16 @@
   </footer>
 
   <script>
+    // Accordion behavior — keep accordions open by default (they have class "open")
+    // Clicking header toggles closed/open.
     const accordions = document.querySelectorAll('.accordion');
     accordions.forEach(acc => {
       const header = acc.querySelector('.accordion-header');
       header.addEventListener('click', () => {
         acc.classList.toggle('closed');
+        // ensure aria-expanded reflects state
+        const expanded = !acc.classList.contains('closed');
+        acc.setAttribute('aria-expanded', expanded ? 'true' : 'false');
       });
     });
   </script>
