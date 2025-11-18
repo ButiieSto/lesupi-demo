@@ -10,15 +10,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    html, body {
-      height: auto;
-      min-height: 100%;
-      margin: 0;
-      overflow-x: hidden;
-    }
-
     body {
       font-family: 'Poppins', sans-serif;
+      margin: 0;
       background: #f1f8ff;
       color: #000;
       line-height: 1.6;
@@ -34,8 +28,6 @@
       align-items: center;
       padding: 1rem 2rem;
       box-sizing: border-box;
-      position: relative;
-      z-index: 3;
     }
 
     header h1 {
@@ -49,7 +41,6 @@
     header img {
       width: 140px;
       height: auto;
-      display: block;
     }
 
     /* === Updated Navbar === */
@@ -62,8 +53,6 @@
       padding: 1rem 0;
       flex-wrap: wrap;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      position: relative;
-      z-index: 2;
     }
 
     nav a {
@@ -95,35 +84,30 @@
     /* Welcome Section */
     .welcome-section {
       text-align: center;
-      padding: 2rem 1.25rem;
+      padding: 2.5rem 1.5rem;
       background: linear-gradient(135deg, #f7faff, #fff8e1);
       border-left: 4px solid #0077cc;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       margin: 2rem auto;
       max-width: 900px;
-      overflow: visible;
-      position: relative;
-      z-index: 1;
     }
 
     .welcome-top {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
+      font-weight: bold;
       margin: 0;
-      font-weight: 600;
-      line-height: 1.05;
-      white-space: nowrap;
+      color: black;
     }
 
     .welcome-main {
-      font-size: 2.6rem;
-      margin: 0.25rem 0 0.75rem 0;
-      font-weight: 700;
-      color: #005fa3;
-      letter-spacing: 1px;
+      font-size: 2.9rem;
+      font-weight: bold;
+      margin: 0.2rem 0 1rem 0;
+      color: black;
     }
 
-    .welcome-section .slogan {
+    .slogan {
       font-size: 1.5rem;
       margin: 0.5rem 0 1rem 0;
       font-weight: bold;
@@ -131,12 +115,10 @@
     }
 
     .welcome-section p {
-      max-width: 820px;
+      max-width: 800px;
       margin: 0.75rem auto;
       font-size: 1rem;
       line-height: 1.6;
-      word-break: normal;
-      overflow: visible;
     }
 
     .highlight {
@@ -172,13 +154,6 @@
       background: #00487d;
     }
 
-    /* Colored Icons */
-    .icon-blue { color: #005fa3; }
-    .icon-gold { color: #d4af37; }
-    .icon-red { color: #d93025; }
-    .icon-green { color: #25D366; }
-
-    /* About Section */
     .about-section {
       max-width: 800px;
       margin: 2rem auto;
@@ -187,10 +162,6 @@
       border-left: 4px solid #0077cc;
       border-radius: 6px;
       color: #000;
-      overflow: visible;
-      box-sizing: border-box;
-      position: relative;
-      z-index: 1;
     }
 
     .about-section h2 {
@@ -204,12 +175,6 @@
       gap: 0.5rem;
     }
 
-    .about-section p {
-      margin: 0;
-      line-height: 1.6;
-      overflow: visible;
-    }
-
     /* Contact Section */
     .contact-section {
       max-width: 800px;
@@ -221,9 +186,6 @@
       text-align: center;
       color: #000;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      overflow: visible;
-      position: relative;
-      z-index: 1;
     }
 
     .contact-section h2 {
@@ -271,7 +233,6 @@
       max-width: 1000px;
       margin: 3rem auto;
       padding: 1.5rem;
-      overflow: visible;
     }
 
     .sponsors h2 {
@@ -281,21 +242,19 @@
 
     .sponsor-logos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
       justify-items: center;
       align-items: center;
     }
 
     .sponsor-logos img {
-      max-height: 90px;
+      max-height: 100px;
       width: auto;
       border-radius: 8px;
       object-fit: contain;
-      display: block;
     }
 
-    /* Footer */
     footer {
       background: #000;
       color: white;
@@ -304,36 +263,36 @@
       font-size: 0.9rem;
     }
 
-    /* Responsive tweaks */
-    @media (max-width: 700px) {
-      .welcome-section {
-        padding: 1.25rem;
+    /* Responsive */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
       }
-      .welcome-top {
-        font-size: 1.6rem;
-        white-space: normal;
-      }
-      .welcome-main {
-        font-size: 1.9rem;
-      }
-      .welcome-section .slogan {
-        font-size: 1.05rem;
-      }
-      .welcome-section p {
-        font-size: 0.98rem;
-        max-width: 94%;
-      }
-      header h1 { font-size: 2.2rem; }
-      nav { gap: 1.2rem; }
-      nav a { font-size: 0.95rem; }
-      .buttons-section button { width: 88%; }
-      .sponsor-logos { gap: 0.9rem; }
-    }
 
-    @media (max-width: 420px) {
-      .welcome-top { font-size: 1.45rem; }
-      .welcome-main { font-size: 1.6rem; }
-      .welcome-section p { font-size: 0.95rem; }
+      header img {
+        margin-top: 1rem;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      nav {
+        gap: 1.2rem;
+      }
+
+      nav a {
+        font-size: 0.95rem;
+      }
+
+      .welcome-top {
+        font-size: 2rem;
+      }
+
+      .welcome-main {
+        font-size: 2.4rem;
+      }
     }
   </style>
 </head>
@@ -345,29 +304,27 @@
     <img src="lithako-sports-logo-reg.jpg" alt="Lithako Edu & Sports Registered Logo">
   </header>
 
-  <!-- Navbar -->
   <nav>
     <a href="index.html"><i class="fas fa-home"></i> Home</a>
     <a href="books.html"><i class="fas fa-book"></i> Books</a>
     <a href="tutoring.html"><i class="fas fa-graduation-cap"></i> Tutoring</a>
   </nav>
 
-  <!-- Welcome Section -->
   <section class="welcome-section">
     <h1 class="welcome-top">Welcome to Lithako</h1>
     <h1 class="welcome-main">Edu &amp; Sports</h1>
 
-    <h2 class="slogan">Empowering our young minds through education &amp; sports.</h2>
+    <h2 class="slogan">Empowering our young minds through education & sports.</h2>
 
     <p>Our structured training programs are tailored for learners aged 5 to 15, combining academic support with high-performance sports development across Football, Basketball, Netball, Athletics, and more.</p>
 
-    <p>With qualified coaches, safe facilities, and results-driven programs, we empower every child to reach their full potential,  academically, physically, and mentally.</p>
+    <p>With qualified coaches, safe facilities, and results-driven programs, we empower every child to reach their full potential, academically, physically, and mentally.</p>
 
     <p>We’re here to nurture their confidence, teach teamwork, and show them that dedication pays off both in the classroom and on the field.</p>
 
     <p>Through our balanced approach to education and sport, children learn discipline, respect, and resilience, which are values that will carry them far beyond the now.</p>
 
-    <p><strong>Developing Complete athletes, because every child, deserves a chance.</strong></p>
+    <p><strong style="color:#005fa3;">Developing Complete athletes, because every child, deserves a chance.</strong></p>
   </section>
 
   <section class="buttons-section">
@@ -377,7 +334,12 @@
 
   <section class="about-section">
     <h2><i class="fas fa-user-tie"></i> About Ranneile Lesupi</h2>
-    <p>Ranneile Lesupi - Sports Coach & Business Visionary. A storyteller at heart. Through Lithako Edu & Sports, he mentors and develops young learners and athletes aged 5-15, guiding them to become confident scholars and disciplined champions.</p>
+    <p>
+      <strong>Ranneile Lesupi</strong> - Sports Coach & Business Visionary. 
+      A storyteller at heart. Through <strong>Lithako Edu & Sports</strong>, 
+      he mentors and develops young learners and athletes aged 5-15, guiding 
+      them to become confident scholars and disciplined champions.
+    </p>
   </section>
 
   <section class="contact-section">
@@ -406,5 +368,6 @@
   <footer>
     &copy; 2025 Lithako Edu. All rights reserved.
   </footer>
+
 </body>
 </html>
