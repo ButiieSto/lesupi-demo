@@ -110,12 +110,6 @@
       100% { transform: scale(1); }
     }
 
-    .highlight {
-      color: #005fa3;
-      font-weight: 600;
-    }
-
-    /* Box Sections */
     .info-box {
       max-width: 900px;
       margin: 2rem auto;
@@ -159,11 +153,6 @@
       justify-content: space-between;
       font-size: 1.1rem;
       user-select: none;
-      transition: background 0.3s ease;
-    }
-
-    .accordion-header:hover {
-      background: #00487d;
     }
 
     .accordion-header i.fa-chevron-down {
@@ -177,8 +166,7 @@
     .accordion-content {
       padding: 1rem 1.5rem;
       opacity: 1;
-      max-height: none; /* Full visibility fix */
-      transition: opacity 0.3s ease;
+      max-height: none;
     }
 
     .accordion.closed .accordion-content {
@@ -200,28 +188,6 @@
       font-style: italic;
     }
 
-    /* Contact Section */
-    .contact-section {
-      max-width: 800px;
-      margin: 3rem auto;
-      background: #ffffff;
-      border-left: 4px solid #0077cc;
-      border-radius: 8px;
-      padding: 1.5rem;
-      text-align: center;
-      color: #000;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .contact-section h2 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      font-size: 2rem;
-      color: #005fa3;
-    }
-
     /* Floating Buttons */
     .floating-btn {
       position: fixed;
@@ -233,15 +199,6 @@
       color: white;
       z-index: 1000;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    .floating-btn i {
-      margin-top: 14px;
-    }
-
-    .floating-btn:hover {
-      transform: scale(1.1);
     }
 
     .whatsapp-float {
@@ -254,34 +211,6 @@
       background-color: #0077cc;
       bottom: 90px;
       right: 20px;
-    }
-
-    /* Back to Home */
-    .back-home {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    .back-home button {
-      background: #005fa3;
-      color: white;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      margin: 0 auto;
-      transition: all 0.3s ease;
-    }
-
-    .back-home button:hover {
-      background: #00487d;
-      transform: scale(1.05);
     }
 
     footer {
@@ -311,7 +240,6 @@
     <button class="cta-button pulse" onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">
       <i class="fas fa-shopping-cart"></i> Order Now
     </button>
-    <p class="highlight">🔥 Limited stock — secure your copy today!</p>
   </section>
 
   <section class="info-box">
@@ -339,54 +267,53 @@
     <p>💳 Safe & simple EFT payment with proof verification.<br>📦 Delivery available nationwide.</p>
   </section>
 
+  <!-- What Readers Are Saying -->
   <div class="accordion open">
-    <div class="accordion-header"><span><i class="fas fa-comment-dots"></i> What Readers Are Saying</span><i class="fas fa-chevron-down"></i></div>
+    <div class="accordion-header">
+      <span><i class="fas fa-comment-dots"></i> What Readers Are Saying</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
     <div class="accordion-content">
       <p><em>"I loved it, as it was very quirky, funny and thought-provoking."</em></p>
-      <p><em>"A brilliantly satirical romp through the neuroses of a truly unforgettable character..."</em></p>
+      <p><em>"A brilliantly satirical romp…" </em></p>
     </div>
   </div>
 
+  <!-- Updated About the Author -->
   <div class="accordion open">
-    <div class="accordion-header"><span><i class="fas fa-user-tie"></i> About the Author</span><i class="fas fa-chevron-down"></i></div>
+    <div class="accordion-header">
+      <span><i class="fas fa-user-tie"></i> About the Author</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
     <div class="accordion-content">
       <p><strong>Ranneile Lesupi</strong>, Sports Coach & Business Visionary. A storyteller at heart.</p>
-      <p>Ranneile Lesupi is a dynamic entrepreneur, creative force, and author whose ventures span across industry and imagination.</p>
-      <p>As the creative lifeblood behind <strong>Ranneile Projects</strong>, he leads innovative initiatives that defy convention.</p>
-      <p>Through <strong>Lithako Edu & Sports</strong>, he mentors children aged 5–15 — nurturing tomorrow’s champions.</p>
-      <p>His ventures include <strong>Maqhubu Hospitality</strong>, <strong>Lelomotech</strong>, and <strong>RuntaFit Apparel</strong>, all operating under <strong>House of Nneile</strong>, where he serves as COO.</p>
-      <p>On page and screen, Ranneile brings stories to life — bold, real, and unapologetic — speaking to his community and beyond.</p>
+      <p><strong>Ranneile Lesupi</strong> is a dynamic entrepreneur, creative force, and author whose ventures span across industry and imagination.</p>
+      <p>Both on page and on screen, Ranneile brings stories which are bold, real and unapologetic to life, speaking to both his community and beyond.</p>
     </div>
   </div>
 
   <div class="accordion open">
-    <div class="accordion-header"><span><i class="fas fa-truck"></i> Shipping FAQs</span><i class="fas fa-chevron-down"></i></div>
+    <div class="accordion-header">
+      <span><i class="fas fa-truck"></i> Shipping FAQs</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
     <div class="accordion-content">
-      <p><strong>Is delivery included in the price?</strong><br>No, delivery is charged separately. You can choose between Pep Paxi, Pudo, or PostNet.</p>
-      <p><strong>Do you ship outside South Africa?</strong><br>Yes, we offer worldwide shipping.</p>
-      <p><strong>When will I receive my book?</strong><br>Orders will ship at the end of September 2025 once pre-orders close and hard copies are printed.</p>
+      <p><strong>Is delivery included?</strong> No. Options: Paxi, Pudo, or PostNet.</p>
+      <p><strong>International shipping?</strong> Yes.</p>
+      <p><strong>Delivery Date?</strong> End of September 2025.</p>
     </div>
   </div>
 
   <div class="thank-you">
-    <p>Thank you for your interest in <em>The Loony Hypochondriacs</em>. Your support helps bring bold, fresh stories to life. We can't wait to deliver your copy soon!</p>
+    Thank you for your interest in <em>The Loony Hypochondriacs</em>. Your support helps bring bold, fresh stories to life. We can't wait to deliver your copy soon!
   </div>
 
-  <section class="contact-section">
-    <h2><i class="fas fa-headset"></i> Contact Us</h2>
-    <ul class="contact-list">
-      <li><i class="fas fa-envelope" style="color:#d93025;"></i> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></li>
-      <li><i class="fab fa-whatsapp" style="color:#25D366;"></i> <a href="https://wa.me/27672656319" target="_blank">+27 67 265 6319</a></li>
-      <li><i class="fas fa-map-marker-alt" style="color:#005fa3;"></i> <a href="https://www.google.com/maps?q=City+of+Matlosana,+South+Africa" target="_blank">City of Matlosana, South Africa</a></li>
-    </ul>
-  </section>
-
   <!-- Floating Buttons -->
-  <a href="https://wa.me/27672656319" class="floating-btn whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+  <a href="https://wa.me/27672656319" class="floating-btn whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <a href="mailto:lithakoedu@gmail.com" class="floating-btn email-float" title="Send us an Email">
+  <a href="mailto:lithakoedu@gmail.com" class="floating-btn email-float">
     <i class="fas fa-envelope"></i>
   </a>
 
