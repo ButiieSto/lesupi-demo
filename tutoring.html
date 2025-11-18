@@ -225,41 +225,41 @@
       transform: scale(1.05);
     }
 
-    /* Floating Buttons */
-    .floating-buttons {
+    /* Floating Buttons (books-style) */
+    .floating-btn {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      z-index: 1000;
-    }
-
-    .float-btn {
       width: 55px;
       height: 55px;
       border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      text-align: center;
+      font-size: 26px;
       color: white;
-      font-size: 24px;
+      z-index: 1000;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s, background 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .float-btn:hover {
-      transform: scale(1.15);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+    .floating-btn i {
+      margin: 0;
     }
 
-    .email-btn {
-      background-color: #005fa3;
+    .floating-btn:hover {
+      transform: scale(1.07);
     }
 
-    .whatsapp-btn {
+    .whatsapp-float {
       background-color: #25D366;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .email-float {
+      background-color: #0077cc;
+      bottom: 90px;
+      right: 20px;
     }
 
     /* Footer */
@@ -278,6 +278,8 @@
       nav a { font-size: 0.95rem; }
       section { padding: 1rem; }
       .cta-button { width: 80%; }
+      .email-float { right: 14px; bottom: 84px; }
+      .whatsapp-float { right: 14px; bottom: 20px; }
     }
   </style>
 </head>
@@ -299,7 +301,7 @@
 
     <div class="details">
       <h2><i class="fas fa-chalkboard-teacher"></i> Our Tutoring Offer</h2>
-      <p class="tagline"><i class="fas fa-lightbulb" style="color:#FFD700;"></i> “Building brighter futures, one learner at a time.”</p>
+      <p class="tagline">“Building brighter futures, one learner at a time.”</p>
       <p><strong>Grades:</strong> 1 – 9</p>
       <p><strong>Subjects:</strong> All Subjects</p>
       <p><strong>Rate:</strong> Only R190 per hour</p>
@@ -321,7 +323,7 @@
     <div class="order-box">
       <h2><i class="fas fa-credit-card"></i> How to Book a Tutoring Session</h2>
       <p><strong>Price:</strong> R190 per hour</p>
-      <p><strong>Payment Method:</strong> EFT Only</p>
+      <p><strong>Payment Method:</strong> EFT or card on site</p>
       <p><strong>Bank:</strong> Capitec Business<br>
          <strong>Account Name:</strong> Lithako Edu and Sports<br>
          <strong>Account Number:</strong> 1051 3359 06</p>
@@ -347,15 +349,14 @@
     </button>
   </div>
 
-  <!-- Floating Buttons -->
-  <div class="floating-buttons">
-    <a href="mailto:info@lithakoeduandsports.co.za" class="float-btn email-btn" title="Email Us">
-      <i class="fas fa-envelope"></i>
-    </a>
-    <a href="https://wa.me/27672656319" class="float-btn whatsapp-btn" title="Chat on WhatsApp" target="_blank">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-  </div>
+  <!-- Floating Buttons (books-style) -->
+  <a href="mailto:info@lithakoeduandsports.co.za" class="floating-btn email-float" title="Send us an Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+
+  <a href="https://wa.me/27672656319" class="floating-btn whatsapp-float" title="Chat with us on WhatsApp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   <footer>
     &copy; 2025 Lithako Edu & Sports. All rights reserved.
