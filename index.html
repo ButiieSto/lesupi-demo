@@ -173,21 +173,39 @@
       gap: 0.5rem;
     }
 
-    /* REGISTER SECTION (kept from previous edit) */
-    .register-section {
+    /* REGISTER SECTION (now collapsible) */
+    details.register-details {
       max-width: 900px;
       margin: 2rem auto;
       background: #ffffff;
       border-left: 4px solid #0077cc;
       border-radius: 8px;
-      padding: 1.25rem;
+      padding: 0; /* padding applied to content, not summary */
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      overflow: hidden;
     }
 
-    .register-section h2 {
-      margin: 0 0 0.6rem 0;
-      color: #005fa3;
-      text-align: center;
+    details.register-details summary {
+      background: #005fa3;
+      color: #fff;
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.05rem;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    /* rotate caret if closed/open (visual) */
+    details.register-details summary::marker { display: none; }
+    details.register-details summary i { transition: transform 0.25s ease; }
+    details.register-details:not([open]) summary i { transform: rotate(-90deg); }
+
+    details.register-details .reg-inner {
+      padding: 1.25rem;
     }
 
     .reg-grid {
@@ -334,94 +352,97 @@
     </p>
   </section>
 
-  <!-- REGISTER SECTION (kept from previous edit) -->
-  <section id="register" class="register-section" aria-labelledby="register-heading">
-    <h2 id="register-heading">How to Book your spot in our Sports Program/s</h2>
-    <p class="register-note">Fill the registration form below and press <strong>Send Registration</strong>. This will open your email app with the registration details pre-filled for sending to our office.</p>
+  <!-- Collapsible registration (open by default) -->
+  <details open class="register-details" aria-labelledby="register-heading">
+    <summary><i class="fas fa-clipboard-list"></i> How to Book your spot in our Sports Program/s</summary>
+    <div class="reg-inner">
+      <h2 id="register-heading" style="margin-top:0; text-align:center;">How to Book your spot in our Sports Program/s</h2>
+      <p class="register-note" style="text-align:center;">Fill the registration form below and press <strong>Send Registration</strong>. This will open your email app with the registration details pre-filled for sending to our office.</p>
 
-    <form id="registrationForm" onsubmit="handleRegistrationSubmit(event)" novalidate>
-      <div class="reg-grid">
-        <div>
-          <label for="childName">Child's Name</label>
-          <input id="childName" name="childName" type="text" required>
-        </div>
+      <form id="registrationForm" onsubmit="handleRegistrationSubmit(event)" novalidate>
+        <div class="reg-grid">
+          <div>
+            <label for="childName">Child's Name</label>
+            <input id="childName" name="childName" type="text" required>
+          </div>
 
-        <div>
-          <label for="childAge">Child's Age</label>
-          <input id="childAge" name="childAge" type="text" required>
-        </div>
+          <div>
+            <label for="childAge">Child's Age</label>
+            <input id="childAge" name="childAge" type="text" required>
+          </div>
 
-        <div class="full">
-          <label for="guardian">Guardian / Parent(s) Name(s)</label>
-          <input id="guardian" name="guardian" type="text" required>
-        </div>
+          <div class="full">
+            <label for="guardian">Guardian / Parent(s) Name(s)</label>
+            <input id="guardian" name="guardian" type="text" required>
+          </div>
 
-        <div class="full">
-          <label for="address">Home Address</label>
-          <input id="address" name="address" type="text">
-        </div>
+          <div class="full">
+            <label for="address">Home Address</label>
+            <input id="address" name="address" type="text">
+          </div>
 
-        <div>
-          <label for="province">Province</label>
-          <input id="province" name="province" type="text">
-        </div>
+          <div>
+            <label for="province">Province</label>
+            <input id="province" name="province" type="text">
+          </div>
 
-        <div>
-          <label for="phone">Phone Number</label>
-          <input id="phone" name="phone" type="text" placeholder="+27 67 265 6319" required>
-        </div>
+          <div>
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="text" placeholder="+27 67 265 6319" required>
+          </div>
 
-        <div>
-          <label for="email">Email Address</label>
-          <input id="email" name="email" type="email" required>
-        </div>
+          <div>
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" required>
+          </div>
 
-        <div>
-          <label>Child's Allergies?</label>
-          <div class="checkbox-row">
-            <label><input type="radio" name="allergies" value="Yes"> Yes</label>
-            <label><input type="radio" name="allergies" value="No" checked> No</label>
+          <div>
+            <label>Child's Allergies?</label>
+            <div class="checkbox-row">
+              <label><input type="radio" name="allergies" value="Yes"> Yes</label>
+              <label><input type="radio" name="allergies" value="No" checked> No</label>
+            </div>
+          </div>
+
+          <div class="full">
+            <label for="allergyDetails">If yes, please list allergies</label>
+            <input id="allergyDetails" name="allergyDetails" type="text" placeholder="Allergies details (if any)">
+          </div>
+
+          <div class="full">
+            <label for="school">What school does your child attend?</label>
+            <input id="school" name="school" type="text">
+          </div>
+
+          <div class="full">
+            <label for="interests">What are your child's interests?</label>
+            <input id="interests" name="interests" type="text">
+          </div>
+
+          <div class="full">
+            <label for="why">Why are you interested in enrolling in Lithako Edu & Sports Programs?</label>
+            <textarea id="why" name="why"></textarea>
+          </div>
+
+          <div>
+            <label for="heard">How did you hear about us?</label>
+            <input id="heard" name="heard" type="text">
+          </div>
+
+          <div>
+            <label for="signature">Parent / Guardian Name (signature)</label>
+            <input id="signature" name="signature" type="text" placeholder="Type full name">
           </div>
         </div>
 
-        <div class="full">
-          <label for="allergyDetails">If yes, please list allergies</label>
-          <input id="allergyDetails" name="allergyDetails" type="text" placeholder="Allergies details (if any)">
+        <div class="reg-actions">
+          <button type="submit">📩 Send Registration</button>
+          <button type="button" class="secondary" onclick="resetRegistration()" aria-label="Reset form">Reset Form</button>
+          <small style="display:block; width:100%; text-align:center; margin-top:0.5rem;">Clicking "Send Registration" will open your default email app with the completed registration ready to send to <strong>lithakoedu@gmail.com</strong>.</small>
         </div>
-
-        <div class="full">
-          <label for="school">What school does your child attend?</label>
-          <input id="school" name="school" type="text">
-        </div>
-
-        <div class="full">
-          <label for="interests">What are your child's interests?</label>
-          <input id="interests" name="interests" type="text">
-        </div>
-
-        <div class="full">
-          <label for="why">Why are you interested in enrolling in Lithako Edu & Sports Programs?</label>
-          <textarea id="why" name="why"></textarea>
-        </div>
-
-        <div>
-          <label for="heard">How did you hear about us?</label>
-          <input id="heard" name="heard" type="text">
-        </div>
-
-        <div>
-          <label for="signature">Parent / Guardian Name (signature)</label>
-          <input id="signature" name="signature" type="text" placeholder="Type full name">
-        </div>
-      </div>
-
-      <div class="reg-actions">
-        <button type="submit">📩 Send Registration</button>
-        <button type="button" class="secondary" onclick="resetRegistration()" aria-label="Reset form">Reset Form</button>
-        <small>Clicking "Send Registration" will open your default email app with the completed registration ready to send to <strong>lithakoedu@gmail.com</strong>.</small>
-      </div>
-    </form>
-  </section>
+      </form>
+    </div>
+  </details>
 
   <section class="contact-section">
     <h2><i class="fas fa-headset"></i> Contact Us</h2>
