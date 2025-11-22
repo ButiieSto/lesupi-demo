@@ -93,19 +93,17 @@
       max-width: 900px;
     }
 
-    .welcome-top {
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin: 0;
+    /* New uniform bold welcome lines (Option B sizes) */
+    .welcome-line {
+      font-weight: 900;
+      margin: 0.15rem 0;
       color: black;
+      line-height: 1.05;
     }
 
-    .welcome-main {
-      font-size: 2.9rem;
-      font-weight: bold;
-      margin: 0.2rem 0 1rem 0;
-      color: black;
-    }
+    .welcome-small { font-size: 2.2rem; }   /* "Welcome to" */
+    .welcome-medium { font-size: 2.7rem; }  /* "Lithako" */
+    .welcome-large { font-size: 2.5rem; }   /* "Edu & Sports" */
 
     .slogan {
       font-size: 1.5rem;
@@ -175,6 +173,38 @@
       gap: 0.5rem;
     }
 
+    /* REGISTER SECTION (kept from previous edit) */
+    .register-section {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #ffffff;
+      border-left: 4px solid #0077cc;
+      border-radius: 8px;
+      padding: 1.25rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .register-section h2 {
+      margin: 0 0 0.6rem 0;
+      color: #005fa3;
+      text-align: center;
+    }
+
+    .reg-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem 1.2rem;
+    }
+
+    .reg-grid .full { grid-column: 1 / -1; }
+    label { font-weight: 600; display: block; margin-bottom: 0.25rem; font-size: 0.95rem; }
+    input, select, textarea { width: 100%; padding: 0.5rem; border: 1px solid #dcdcdc; border-radius: 6px; box-sizing: border-box; font-size: 0.95rem; }
+    textarea { min-height: 90px; resize: vertical; }
+
+    .reg-actions { display:flex; gap:1rem; align-items:center; justify-content:center; margin-top:1rem; flex-wrap:wrap; }
+    .reg-actions button { background:#005fa3; color:#fff; border:none; padding:0.7rem 1.2rem; border-radius:6px; cursor:pointer; font-weight:600; }
+    .reg-actions .secondary { background:transparent; color:#005fa3; border:2px dashed #cfe9ff; padding:0.6rem 1rem; }
+
     /* Contact Section */
     .contact-section {
       max-width: 800px;
@@ -197,35 +227,13 @@
       gap: 0.5rem;
     }
 
-    .contact-intro {
-      color: #333;
-      font-style: italic;
-      margin-bottom: 1rem;
-    }
+    .contact-intro { color: #333; font-style: italic; margin-bottom: 1rem; }
 
-    .contact-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .contact-list li {
-      margin: 0.5rem 0;
-      font-size: 1rem;
-    }
-
-    .contact-list i {
-      margin-right: 8px;
-    }
-
-    .contact-list a {
-      color: #005fa3;
-      text-decoration: none;
-    }
-
-    .contact-list a:hover {
-      text-decoration: underline;
-    }
+    .contact-list { list-style: none; padding: 0; margin: 0; }
+    .contact-list li { margin: 0.5rem 0; font-size: 1rem; }
+    .contact-list i { margin-right: 8px; }
+    .contact-list a { color: #005fa3; text-decoration: none; }
+    .contact-list a:hover { text-decoration: underline; }
 
     /* Sponsors Section */
     .sponsors {
@@ -235,10 +243,7 @@
       padding: 1.5rem;
     }
 
-    .sponsors h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
+    .sponsors h2 { font-size: 2rem; margin-bottom: 1.5rem; }
 
     .sponsor-logos {
       display: grid;
@@ -264,35 +269,21 @@
     }
 
     /* Responsive */
+    @media (max-width: 900px) {
+      .reg-grid { grid-template-columns: 1fr; }
+      .welcome-main { font-size: 2.4rem; }
+      .welcome-top { font-size: 2.1rem; }
+    }
+
     @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      header img {
-        margin-top: 1rem;
-      }
-
-      header h1 {
-        font-size: 2.2rem;
-      }
-
-      nav {
-        gap: 1.2rem;
-      }
-
-      nav a {
-        font-size: 0.95rem;
-      }
-
-      .welcome-top {
-        font-size: 2rem;
-      }
-
-      .welcome-main {
-        font-size: 2.4rem;
-      }
+      header { flex-direction: column; text-align: center; }
+      header img { margin-top: 1rem; }
+      header h1 { font-size: 2.2rem; }
+      nav { gap: 1.2rem; }
+      nav a { font-size: 0.95rem; }
+      .welcome-small { font-size: 2rem; }
+      .welcome-medium { font-size: 2.5rem; }
+      .welcome-large { font-size: 2.2rem; }
     }
   </style>
 </head>
@@ -311,8 +302,9 @@
   </nav>
 
   <section class="welcome-section">
-    <h1 class="welcome-top">Welcome to Lithako</h1>
-    <h1 class="welcome-main">Edu &amp; Sports</h1>
+    <h1 class="welcome-line welcome-small">Welcome to</h1>
+    <h1 class="welcome-line welcome-medium">Lithako</h1>
+    <h1 class="welcome-line welcome-large">Edu &amp; Sports</h1>
 
     <h2 class="slogan">Empowering our young minds through education & sports.</h2>
 
@@ -342,6 +334,95 @@
     </p>
   </section>
 
+  <!-- REGISTER SECTION (kept from previous edit) -->
+  <section id="register" class="register-section" aria-labelledby="register-heading">
+    <h2 id="register-heading">How to Book your spot in our Sports Program/s</h2>
+    <p class="register-note">Fill the registration form below and press <strong>Send Registration</strong>. This will open your email app with the registration details pre-filled for sending to our office.</p>
+
+    <form id="registrationForm" onsubmit="handleRegistrationSubmit(event)" novalidate>
+      <div class="reg-grid">
+        <div>
+          <label for="childName">Child's Name</label>
+          <input id="childName" name="childName" type="text" required>
+        </div>
+
+        <div>
+          <label for="childAge">Child's Age</label>
+          <input id="childAge" name="childAge" type="text" required>
+        </div>
+
+        <div class="full">
+          <label for="guardian">Guardian / Parent(s) Name(s)</label>
+          <input id="guardian" name="guardian" type="text" required>
+        </div>
+
+        <div class="full">
+          <label for="address">Home Address</label>
+          <input id="address" name="address" type="text">
+        </div>
+
+        <div>
+          <label for="province">Province</label>
+          <input id="province" name="province" type="text">
+        </div>
+
+        <div>
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone" type="text" placeholder="+27 67 265 6319" required>
+        </div>
+
+        <div>
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+
+        <div>
+          <label>Child's Allergies?</label>
+          <div class="checkbox-row">
+            <label><input type="radio" name="allergies" value="Yes"> Yes</label>
+            <label><input type="radio" name="allergies" value="No" checked> No</label>
+          </div>
+        </div>
+
+        <div class="full">
+          <label for="allergyDetails">If yes, please list allergies</label>
+          <input id="allergyDetails" name="allergyDetails" type="text" placeholder="Allergies details (if any)">
+        </div>
+
+        <div class="full">
+          <label for="school">What school does your child attend?</label>
+          <input id="school" name="school" type="text">
+        </div>
+
+        <div class="full">
+          <label for="interests">What are your child's interests?</label>
+          <input id="interests" name="interests" type="text">
+        </div>
+
+        <div class="full">
+          <label for="why">Why are you interested in enrolling in Lithako Edu & Sports Programs?</label>
+          <textarea id="why" name="why"></textarea>
+        </div>
+
+        <div>
+          <label for="heard">How did you hear about us?</label>
+          <input id="heard" name="heard" type="text">
+        </div>
+
+        <div>
+          <label for="signature">Parent / Guardian Name (signature)</label>
+          <input id="signature" name="signature" type="text" placeholder="Type full name">
+        </div>
+      </div>
+
+      <div class="reg-actions">
+        <button type="submit">📩 Send Registration</button>
+        <button type="button" class="secondary" onclick="resetRegistration()" aria-label="Reset form">Reset Form</button>
+        <small>Clicking "Send Registration" will open your default email app with the completed registration ready to send to <strong>lithakoedu@gmail.com</strong>.</small>
+      </div>
+    </form>
+  </section>
+
   <section class="contact-section">
     <h2><i class="fas fa-headset"></i> Contact Us</h2>
     <p class="contact-intro">We’re here to assist parents, learners, and partners — reach out anytime.</p>
@@ -368,6 +449,51 @@
   <footer>
     &copy; 2025 Lithako Edu. All rights reserved.
   </footer>
+
+  <script>
+    // Build mailto body and open user's email client with pre-filled message.
+    function handleRegistrationSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('registrationForm');
+      const data = new FormData(form);
+
+      const fields = {
+        "Child's Name": data.get('childName') || '',
+        "Child's Age": data.get('childAge') || '',
+        "Guardian / Parent(s) Name(s)": data.get('guardian') || '',
+        "Home Address": data.get('address') || '',
+        "Province": data.get('province') || '',
+        "Phone": data.get('phone') || '',
+        "Email": data.get('email') || '',
+        "Allergies (Yes/No)": data.get('allergies') || '',
+        "Allergy Details": data.get('allergyDetails') || '',
+        "School": data.get('school') || '',
+        "Child's Interests": data.get('interests') || '',
+        "Why enrolling": data.get('why') || '',
+        "How did you hear about us": data.get('heard') || '',
+        "Parent/Guardian (signature/name)": data.get('signature') || ''
+      };
+
+      let body = '';
+      for (const [k, v] of Object.entries(fields)) {
+        body += `${k}: ${v}\n`;
+      }
+
+      const subject = `Program Registration: ${fields["Child's Name"] || 'New Registration'}`;
+      const mailto = `mailto:lithakoedu@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailto;
+    }
+
+    function resetRegistration() {
+      const form = document.getElementById('registrationForm');
+      form.reset();
+      const radios = document.getElementsByName('allergies');
+      if (radios && radios.length) {
+        for (const r of radios) { if (r.value === 'No') r.checked = true; }
+      }
+    }
+  </script>
 
 </body>
 </html>
