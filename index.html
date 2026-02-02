@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lithako Edu & Sports</title>
+  <title>Lithako Edu – The Loony Hypochondriacs</title>
 
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -16,20 +16,16 @@
 
   <!-- Header -->
   <header>
-    <h1>LITHAKO<br>EDU & SPORTS</h1>
-    <img 
-      src="lithako-sports-logo-reg.jpg" 
-      alt="Lithako Edu & Sports Logo" 
-      style="width:130px;margin-top:1rem;"
-    >
+    <h1>Lithako Edu</h1>
+    <p>Order <em>The Loony Hypochondriacs</em> Today</p>
   </header>
 
   <!-- Navigation -->
   <nav>
-    <a href="index.html" class="active">
+    <a href="index.html">
       <i class="fas fa-home"></i> Home
     </a>
-    <a href="books.html">
+    <a href="books.html" class="active">
       <i class="fas fa-book"></i> Books
     </a>
     <a href="tutoring.html">
@@ -37,47 +33,99 @@
     </a>
   </nav>
 
-  <!-- Hero / Welcome -->
+  <!-- Hero -->
   <section class="hero">
-    <h1>Welcome to</h1>
-    <h1>Lithako</h1>
-    <h1>Edu &amp; Sports</h1>
+    <img 
+      src="tlh-cover.jpg" 
+      alt="The Loony Hypochondriacs Book Cover"
+      style="max-width:260px;width:80%;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.2);"
+    >
 
-    <p class="slogan">
-      Empowering our young minds through education &amp; sports.
-    </p>
-
-    <p>
-      Our structured training programs are tailored for learners aged 5 to 15,
-      combining academic support with high-performance sports development.
-    </p>
-
-    <p>
-      <strong style="color:var(--primary);">
-        Developing complete athletes, because every child deserves a chance.
-      </strong>
-    </p>
-
-    <div class="cta">
-      <button onclick="location.href='books.html'">
-        <i class="fas fa-book"></i> Explore Our Books
-      </button>
-      <button onclick="location.href='tutoring.html'">
-        <i class="fas fa-graduation-cap"></i> Join Our Tutoring
+    <div class="cta" style="margin-top:1.2rem;">
+      <button onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">
+        <i class="fas fa-shopping-cart"></i> Order Now
       </button>
     </div>
   </section>
 
-  <!-- About -->
+  <!-- About the Book -->
   <section>
     <h2>
-      <i class="fas fa-user-tie"></i> About Ranneile Lesupi
+      <i class="fas fa-book-open"></i> About the Book
     </h2>
+
     <p>
-      <strong>Ranneile Lesupi</strong> mentors learners and athletes aged 5–15
-      through Lithako Edu & Sports, shaping confident scholars and disciplined
-      champions both in the classroom and on the field.
+      Welcome to <strong>Hypercondria™</strong> — a flawless, medically optimized
+      town where not having a disorder is the ultimate red flag.
     </p>
+
+    <p>
+      Wellness is currency, therapy is mandatory, and medication is celebrated.
+      Feeling fine? You’re clearly in denial.
+    </p>
+
+    <p>
+      Enter Hloux, a quiet skeptic whose clean medical record raises suspicion.
+      Alongside Noni, he uncovers the unsettling truth beneath compulsory wellness.
+    </p>
+  </section>
+
+  <!-- Order Info -->
+  <section id="order">
+    <h2>
+      <i class="fas fa-credit-card"></i> How to Order
+    </h2>
+
+    <p><strong>Price:</strong> R369 (excluding delivery)</p>
+    <p><strong>Payment Method:</strong> EFT Only</p>
+
+    <p>
+      <strong>Bank:</strong> Capitec Business<br>
+      <strong>Account Name:</strong> Lithako Edu and Sports<br>
+      <strong>Account Number:</strong> 1051 3359 06
+    </p>
+
+    <p>
+      <strong>Reference:</strong> Your Full Name + <code>#TLH</code>
+    </p>
+
+    <p>
+      Send proof of payment to
+      <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a>
+    </p>
+  </section>
+
+  <!-- Reviews -->
+  <section>
+    <h2>
+      <i class="fas fa-comment-dots"></i> What Readers Are Saying
+    </h2>
+
+    <p><em>“I loved it — quirky, funny, and thought-provoking.”</em></p>
+    <p><em>“A brilliantly satirical romp with laugh-out-loud moments.”</em></p>
+    <p><em>“A refreshing and welcome break from academic literature.”</em></p>
+  </section>
+
+  <!-- About Author -->
+  <section>
+    <h2>
+      <i class="fas fa-user-tie"></i> About the Author
+    </h2>
+
+    <p>
+      <strong>Ranneile Lesupi</strong> is a sports coach, entrepreneur, and
+      storyteller whose work bridges imagination, satire, and community impact.
+    </p>
+  </section>
+
+  <!-- Shipping -->
+  <section>
+    <h2>
+      <i class="fas fa-truck"></i> Shipping FAQs
+    </h2>
+
+    <p><strong>Is delivery included?</strong> No — options include Paxi, Pudo, or PostNet.</p>
+    <p><strong>International shipping?</strong> Yes.</p>
   </section>
 
   <!-- Contact -->
@@ -85,6 +133,7 @@
     <h2>
       <i class="fas fa-headset"></i> Contact Us
     </h2>
+
     <ul>
       <li>
         <i class="fas fa-envelope"></i>
