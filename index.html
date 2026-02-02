@@ -11,120 +11,224 @@
 
   <!-- Shared Styles -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Page-specific styles (FORM ONLY) -->
+  <style>
+    .welcome-lines h1 {
+      margin: 0.15rem 0;
+      font-weight: 900;
+      line-height: 1.05;
+    }
+
+    .welcome-lines .small { font-size: 2.2rem; }
+    .welcome-lines .medium { font-size: 2.7rem; }
+    .welcome-lines .large { font-size: 2.5rem; }
+
+    .buttons-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    details.register-details {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      background: #fff;
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    details.register-details summary {
+      background: var(--primary);
+      color: #fff;
+      padding: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .reg-inner { padding: 1.5rem; }
+
+    .reg-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .reg-grid .full { grid-column: 1 / -1; }
+
+    label { font-weight: 600; }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.55rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+
+    textarea { min-height: 90px; }
+
+    .reg-actions {
+      margin-top: 1.2rem;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .reg-grid { grid-template-columns: 1fr; }
+      .welcome-lines .small { font-size: 2rem; }
+      .welcome-lines .medium { font-size: 2.4rem; }
+      .welcome-lines .large { font-size: 2.2rem; }
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>LITHAKO<br>EDU & SPORTS</h1>
-    <img 
-      src="lithako-sports-logo-reg.jpg" 
-      alt="Lithako Edu & Sports Logo" 
-      style="width:130px;margin-top:1rem;"
-    >
-  </header>
+<!-- Header -->
+<header>
+  <h1>LITHAKO<br>EDU & SPORTS</h1>
+  <img src="lithako-sports-logo-reg.jpg" alt="Lithako Edu & Sports Logo" style="width:130px;margin-top:1rem;">
+</header>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="index.html" class="active">
-      <i class="fas fa-home"></i> Home
-    </a>
-    <a href="books.html">
-      <i class="fas fa-book"></i> Books
-    </a>
-    <a href="tutoring.html">
-      <i class="fas fa-graduation-cap"></i> Tutoring
-    </a>
-  </nav>
+<!-- Navigation -->
+<nav>
+  <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+  <a href="books.html"><i class="fas fa-book"></i> Books</a>
+  <a href="tutoring.html"><i class="fas fa-graduation-cap"></i> Tutoring</a>
+</nav>
 
-  <!-- Hero / Welcome -->
-  <section class="hero">
-    <h1>Welcome to</h1>
-    <h1>Lithako</h1>
-    <h1>Edu &amp; Sports</h1>
+<!-- Welcome -->
+<section class="hero">
+  <div class="welcome-lines">
+    <h1 class="small">Welcome to</h1>
+    <h1 class="medium">Lithako</h1>
+    <h1 class="large">Edu & Sports</h1>
+  </div>
 
-    <p class="slogan">
-      Empowering our young minds through education &amp; sports.
-    </p>
+  <p class="slogan">
+    Empowering our young minds through education & sports.
+  </p>
 
-    <p>
-      Our structured training programs are tailored for learners aged 5 to 15,
-      combining academic support with high-performance sports development.
-    </p>
+  <p>
+    Our structured training programs are tailored for learners aged 5 to 15,
+    combining academic support with high-performance sports development across
+    Football, Basketball, Netball, Athletics, and more.
+  </p>
 
-    <p>
-      <strong style="color:var(--primary);">
-        Developing complete athletes, because every child deserves a chance.
-      </strong>
-    </p>
+  <p>
+    With qualified coaches, safe facilities, and results-driven programs, we
+    empower every child to reach their full potential — academically, physically,
+    and mentally.
+  </p>
 
-    <div class="cta">
-      <button onclick="location.href='books.html'">
-        <i class="fas fa-book"></i> Explore Our Books
-      </button>
-      <button onclick="location.href='tutoring.html'">
-        <i class="fas fa-graduation-cap"></i> Join Our Tutoring
-      </button>
-    </div>
-  </section>
+  <p>
+    Through our balanced approach to education and sport, children learn
+    discipline, respect, and resilience — values that carry far beyond the now.
+  </p>
 
-  <!-- About -->
-  <section>
-    <h2>
-      <i class="fas fa-user-tie"></i> About Ranneile Lesupi
-    </h2>
-    <p>
-      <strong>Ranneile Lesupi</strong> mentors learners and athletes aged 5–15
-      through Lithako Edu & Sports, shaping confident scholars and disciplined
-      champions both in the classroom and on the field.
-    </p>
-  </section>
+  <p>
+    <strong style="color:var(--primary);">
+      Developing complete athletes, because every child deserves a chance.
+    </strong>
+  </p>
 
-  <!-- Contact -->
-  <section class="contact">
-    <h2>
-      <i class="fas fa-headset"></i> Contact Us
-    </h2>
-    <ul>
-      <li>
-        <i class="fas fa-envelope"></i>
-        <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a>
-      </li>
-      <li>
-        <i class="fab fa-whatsapp"></i>
-        <a href="https://wa.me/27672656319" target="_blank">
-          +27 67 265 6319
-        </a>
-      </li>
-      <li>
-        <i class="fas fa-map-marker-alt"></i>
-        City of Matlosana, South Africa
-      </li>
-    </ul>
-  </section>
+  <div class="buttons-section">
+    <button onclick="location.href='books.html'">
+      <i class="fas fa-book"></i> Explore Our Books
+    </button>
+    <button onclick="location.href='tutoring.html'">
+      <i class="fas fa-graduation-cap"></i> Join Our Tutoring
+    </button>
+  </div>
+</section>
 
-  <!-- Floating Buttons -->
-  <a 
-    href="https://wa.me/27672656319" 
-    class="floating-btn whatsapp" 
-    target="_blank"
-    title="Chat with us on WhatsApp"
-  >
-    <i class="fab fa-whatsapp"></i>
-  </a>
+<!-- About -->
+<section>
+  <h2><i class="fas fa-user-tie"></i> About Ranneile Lesupi</h2>
+  <p>
+    <strong>Ranneile Lesupi</strong> — Sports Coach & Business Visionary.
+    A storyteller at heart. Through <strong>Lithako Edu & Sports</strong>,
+    he mentors and develops young learners and athletes aged 5–15.
+  </p>
+</section>
 
-  <a 
-    href="mailto:lithakoedu@gmail.com" 
-    class="floating-btn email"
-    title="Send us an email"
-  >
-    <i class="fas fa-envelope"></i>
-  </a>
+<!-- Registration Form (RESTORED) -->
+<details open class="register-details">
+  <summary><i class="fas fa-clipboard-list"></i> How to Book Your Spot</summary>
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Lithako Edu. All rights reserved.
-  </footer>
+  <div class="reg-inner">
+    <form id="registrationForm" onsubmit="handleRegistrationSubmit(event)">
+      <div class="reg-grid">
+        <div>
+          <label>Child’s Name</label>
+          <input name="childName" required>
+        </div>
+
+        <div>
+          <label>Child’s Age</label>
+          <input name="childAge" required>
+        </div>
+
+        <div class="full">
+          <label>Parent / Guardian Name</label>
+          <input name="guardian" required>
+        </div>
+
+        <div class="full">
+          <label>Phone Number</label>
+          <input name="phone" required>
+        </div>
+
+        <div class="full">
+          <label>Email</label>
+          <input name="email" type="email" required>
+        </div>
+
+        <div class="full">
+          <label>Why are you interested?</label>
+          <textarea name="why"></textarea>
+        </div>
+      </div>
+
+      <div class="reg-actions">
+        <button type="submit">📩 Send Registration</button>
+      </div>
+    </form>
+  </div>
+</details>
+
+<!-- Contact -->
+<section class="contact">
+  <h2><i class="fas fa-headset"></i> Contact Us</h2>
+  <ul>
+    <li><i class="fas fa-envelope"></i> <a href="mailto:lithakoedu@gmail.com">lithakoedu@gmail.com</a></li>
+    <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/27672656319" target="_blank">+27 67 265 6319</a></li>
+    <li><i class="fas fa-map-marker-alt"></i> City of Matlosana, South Africa</li>
+  </ul>
+</section>
+
+<!-- Floating Buttons -->
+<a href="https://wa.me/27672656319" class="floating-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:lithakoedu@gmail.com" class="floating-btn email"><i class="fas fa-envelope"></i></a>
+
+<footer>
+  &copy; 2025 Lithako Edu & Sports. All rights reserved.
+</footer>
+
+<script>
+function handleRegistrationSubmit(e) {
+  e.preventDefault();
+  const f = new FormData(e.target);
+  let body = '';
+  for (const [k,v] of f.entries()) body += `${k}: ${v}\n`;
+  window.location.href =
+    `mailto:lithakoedu@gmail.com?subject=New Registration&body=${encodeURIComponent(body)}`;
+}
+</script>
 
 </body>
 </html>
