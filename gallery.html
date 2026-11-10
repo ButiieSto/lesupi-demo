@@ -97,7 +97,7 @@
     <button class="filter-btn active" onclick="filterGallery('all', this)">All</button>
     <button class="filter-btn" onclick="filterGallery('football', this)">Football</button>
     <button class="filter-btn" onclick="filterGallery('basketball', this)">Basketball</button>
-    <button class="filter-btn" onclick="filterGallery('athletics', this)">Athletics</button>
+    <button class="filter-btn" onclick="filterGallery('fitness', this)">Fitness</button>
     <button class="filter-btn" onclick="filterGallery('tutoring', this)">Tutoring</button>
   </div>
 
@@ -139,10 +139,7 @@
       { src: 'gallery-football-circle.jpg', label: 'Warm-Up Circle', cat: 'football' },
       { src: 'gallery-football-lineup.jpg', label: 'Our Young Players', cat: 'football' },
       { src: 'gallery-football-after.jpg', label: 'After Training', cat: 'football' },
-      { src: 'gallery-fitness-gym.jpg', label: 'Gym Conditioning', cat: 'athletics' },
-      { src: 'https://images.unsplash.com/photo-1761604478724-13fe879468cf?w=700&q=75', label: 'Tutoring Session', cat: 'tutoring' },
-      { src: 'https://images.unsplash.com/photo-1567057420215-0afa9aa9253a?w=700&q=75', label: 'Classroom Learning', cat: 'tutoring' },
-      { src: 'https://images.unsplash.com/photo-1637148659333-aa7f09fc2d13?w=700&q=75', label: 'Study Group', cat: 'tutoring' },
+      { src: 'gallery-fitness-gym.jpg', label: 'Gym Conditioning', cat: 'fitness' },
     ];
 
     let currentIdx = 0;
@@ -152,6 +149,7 @@
       const grid = document.getElementById('galleryGrid');
       visiblePhotos = filter === 'all' ? photos : photos.filter(p => p.cat === filter);
       grid.innerHTML = '';
+      if (!visiblePhotos.length) { grid.innerHTML = '<p style="text-align:center;color:#555;column-span:all;">Photos coming soon.</p>'; return; }
       visiblePhotos.forEach((p, i) => {
         const item = document.createElement('div');
         item.className = 'gallery-item';
